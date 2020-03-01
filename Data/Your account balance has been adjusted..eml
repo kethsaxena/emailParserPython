@@ -1,0 +1,666 @@
+Delivered-To: bdbhakta1968@gmail.com
+Received: by 2002:ab3:1297:0:0:0:0:0 with SMTP id c23csp4327558ltc;
+        Mon, 27 Jan 2020 16:06:29 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzj1Z5fgtu2D5UJR9yurLUADiAJzXZpg8eu6Sg8fXAkcW1eR/kzV1ljWvNR3iWuC592xbo6
+X-Received: by 2002:a25:becd:: with SMTP id k13mr14213323ybm.220.1580169989076;
+        Mon, 27 Jan 2020 16:06:29 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1580169989; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Sf1qKK9SYBR6iA6PH0LuwR0NvW/co28uJOeuKezh9PpW2WLBTdkJaV+lUt/OI9Nigz
+         Jjm/ALqK8Z0R5VoXuX4CaW/b9ob40QhVyC68KMIwT602YHpAKUCVyaWx+nwNhpAiqD05
+         BKiuD/xUT688UJEtjCkNjwQevumSQQmvSjpM88fIeWefiBXoDSGsyq1OjahFK17KP2AQ
+         IGyCxnd2rbFtp5JG/ch5bUU4yEAybaFmDlufh018L+wetBv6Y+og1B3hu69eyFS9eZIW
+         MPPs19ZDbeN0ve8Ho9Vmvaryu75RtHLMLyW29bbdQwwjcCtAMjKKjnRiF/NldSL3RNPo
+         c3BQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:messagevalidityduration
+         :messagewebvalidityduration:messageretryperiod:messagemaxretry
+         :affinity:tenantheader:message-id:mime-version:reply-to:to:subject
+         :date:from:domainkey-signature:dkim-signature;
+        bh=uhzDOCyYE+EQxVv4txhAk6nt5Y1WKoKL6inh+7Ap8wc=;
+        b=R3o5S9SXKg/SUCrlTWxQdbWXy/JEjQpO1kh0Z4NeewFRh7DEo1GkVFyp2aIUaSntBX
+         jbLZ0F5ICs+bwK8ufIOTMgol/Jcfo24DiFSTI7shmPkoqP6IKFzZWcHwOzEQ4H/biSXg
+         8dhok9SRkIosGCI4lA9JW914zW8Aw+1rN8/UU4FsnpnZkac9GRFt6NZu781zYgApQO/W
+         zvWcfHaQYQaYJ1AnVf0x1Z1riGXRYc9QTmSLKo2AIOZZtECvW7vHwvQvXG2qw8paOLtv
+         4C+yom+rBg+RDXKc7zysUB+TjrB68Lc3eROc24W0N2W9HqzDa4DTIJHfY3fugWDOm1Ew
+         zi8g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ifly.southwest.com header.s=southwest-airlines header.b=fAMTm0Qr;
+       spf=pass (google.com: domain of bounce@ifly.southwest.com designates 192.243.228.83 as permitted sender) smtp.mailfrom=bounce@ifly.southwest.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=southwest.com
+Return-Path: <bounce@ifly.southwest.com>
+Received: from r83.ifly.southwest.com (r83.ifly.southwest.com. [192.243.228.83])
+        by mx.google.com with ESMTPS id d73si2508328ywb.316.2020.01.27.16.06.28
+        for <bdbhakta1968@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 27 Jan 2020 16:06:29 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce@ifly.southwest.com designates 192.243.228.83 as permitted sender) client-ip=192.243.228.83;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ifly.southwest.com header.s=southwest-airlines header.b=fAMTm0Qr;
+       spf=pass (google.com: domain of bounce@ifly.southwest.com designates 192.243.228.83 as permitted sender) smtp.mailfrom=bounce@ifly.southwest.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=southwest.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	s=southwest-airlines;
+	d=ifly.southwest.com;
+	h=domainkey-signature:from:date:subject:to:reply-to:mime-version:x-mailer:message-id:tenantheader:affinity:x-cust_messageid:x-cust_deliveryid:x-cust_instancename:messagemaxretry:messageretryperiod:messagewebvalidityduration:messagevalidityduration:x-cust_imsorgid:content-type:content-transfer-encoding;
+	bh=uhzDOCyYE+EQxVv4txhAk6nt5Y1WKoKL6inh+7Ap8wc=;
+	b=fAMTm0QruxGAO/HsP9vZMePrUsp6wS/CizfIYH5boIKaPgrTnDMT1g5w154PD+HAEUEytoGI62kNsTcpEAEWWZiDLLUc5ZjaIxhJalO6ilHqSOg0G9r/cR7f/aIqUM5q2OX4hBuf1Fec8KunUe1AsSl0zGj++9H2eO8zmVvNZXv0H4/wY9kpOR/NOtAMc8NRUX1v/zL7ZVbPZO1Ipi+8vbMqH4+U/+jIQGZypBBX1XCZ1Rn+Hdw9B9G4zlfkVmicCk9IlNoRdb2Yul6q8ZhM85aBqvRVu9u2a+1H/19cZadJQ6XNiSyhBkMIsdOw/UxOhdH6hSov+1l90NauMoVWaA==
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns;
+	s=southwest-airlines;
+	d=ifly.southwest.com;
+	h=From:Date:Subject:To:Reply-To:MIME-Version:X-mailer:Message-ID:TenantHeader:Affinity:X-cust_MessageID:X-cust_DeliveryID:X-cust_InstanceName:MessageMaxRetry:MessageRetryPeriod:MessageWebValidityDuration:MessageValidityDuration:X-cust_IMSOrgID:Content-Type:Content-Transfer-Encoding;
+	b=O5DkgNZgXBq9Oz9UqRfUS/iO+PVzRo4tv3A1orlVIMm/UBNaY1bpTBKsO/aiRyiS7aR1nSplp+3ROLGGifSg3GHR9HPHAeIUcruxGBNz5+jEmGv/KQZdCzXTuHG7wMIp+Zl94yQjx0/RXgvVaQ/VEx+Zed5PEpG8qqklaCdq/js5eFwOOgjgQBjBMYviuO722j1Gfh8zYvG9DY5AYlHgQkbuv1bYE5tHPkZg5WvNqTkE+AzpskwIYdf7lfJPHCuVQNfTcfE3NtYKqct3RI/MwGcyRFYUu8Dpb5DcxaPlh7CesvGyds0eakWHjRbrSf4vWFy39klbrgevpROQFaRmGw==
+From: "Southwest Airlines Rapid Rewards" <southwestairlines@ifly.southwest.com>
+Date: Mon, 27 Jan 2020 16:06:24 -0800
+Subject: Your account balance has been adjusted.
+To: <bdbhakta1968@gmail.com>
+Reply-To: "Southwest Airlines" <no-reply@ifly.southwest.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM63169AEA408FB3974southwe_rt_prod2@ifly.southwest.com>
+TenantHeader: 367011ca-3d26-4542-9bb9-ccb53ec4fc3b
+Affinity: email
+X-cust_MessageID: 829009572
+X-cust_DeliveryID: 150681972
+X-cust_InstanceName: southwe_rt_prod2
+MessageMaxRetry: 5
+MessageRetryPeriod: 3600
+MessageWebValidityDuration: 5184000
+MessageValidityDuration: 432000
+X-cust_IMSOrgID: 
+Content-Type: text/html;
+	charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+/>
+  <title>Southwest Airlines</title>
+  <style type=3D"text/css">
+    div, p, a, li, td {-webkit-text-size-adjust:none;}
+    .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass f=
+ont, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+  </style>
+</head>
+<body bgcolor=3D"#15214d">
+
+
+<script>
+    
+    
+    
+</script>
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" bgcolor=3D"#15214d" style=3D"background-color:#15214d; table-l=
+ayout:fixed">
+  
+   <!-- BEGIN CONTAINING TABLE TO ADD BORDER SPACE FOR GMAIL APP -->
+  <tr>
+    <td bgcolor=3D"#15214d" width=3D"100%" align=3D"center">
+      <table width=3D"620" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"center">
+        <!-- END CONTAINING TABLE TO ADD BORDER SPACE FOR GMAIL APP -->
+        
+        <!-- BEGIN HEADER -->
+        <tr>
+          <td bgcolor=3D"#15214d" width=3D"100%" align=3D"center">
+            <table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"center">
+              
+              <!-- BEGIN PREHEADER -->
+              <tr>
+                <td>
+                  <table width=3D"600" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0">
+                    <tr>
+                      <td align=3D"left" bgcolor=3D"#14214D" style=3D"font-=
+family:Arial, Helvetica, sans-serif; color:#cccccc; font-size:9px; padding-=
+top:10px;">
+                        <!-- CONTENT_REGION_|Preheader| --> 
+                        &nbsp;&nbsp;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <img src=3D"http://res.ifly.southwest.com/res/south=
+we_rt_prod2/swa_header_div.jpg" width=3D"600" height=3D"19" style=3D"displa=
+y:block"/>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- END PREHEADER -->
+        
+              <!-- BEGIN PERSONALIZATION -->
+              <tr>
+                <td bgcolor=3D"#14214D" align=3D"right">
+                  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" a=
+lign=3D"right">
+                    <!-- CONTENT_REGION_|Hello| -->
+                    <table class=3D"container ct" width=3D"600" align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                      <tbody>
+                        <tr>
+                        <td class=3D"col" height=3D"16" valign=3D"bottom" s=
+tyle=3D"text-align: right; font-weight: bold; color: #ffffff; font-family: =
+Arial, Helvetica, sans-serif; font-size: 12px;">                          
+                          RR#&nbsp;<a href=3D"" class=3D"b" style=3D"color:=
+ #FFFFFF; text-decoration: none;">64404373</a>
+                        </td>
+                        </tr>
+                      </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- END PERSONALIZATION -->
+        
+              <!-- BEGIN LOGO -->
+              <tr>
+                <td bgcolor=3D"#14214D">
+                  <table width=3D"600" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0">
+                    <tr>
+                      <td align=3D"left" style=3D"font-family:Arial, Helvet=
+ica, sans-serif; color:#cccccc; font-size:12px; vertical-align: bottom;">
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3975&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"font-fam=
+ily:Arial, Helvetica, sans-serif; color:#cccccc; font-size:12px;"><img src=
+=3D"http://res.ifly.southwest.com/res/southwe_rt_prod2/swa_rr_logo.jpg" wid=
+th=3D"175" height=3D"62" alt=3D"Southwest Airlines Rapid Rewards" border=3D=
+"0" style=3D"display:block"/>
+                        </a>
+                      </td>
+                      <td align=3D"right" valign=3D"bottom" style=3D"font-f=
+amily:Arial, Helvetica, sans-serif; color:#cccccc; font-size:12px; vertical=
+-align: bottom;">
+                        <!--CONTENT_REGION_|Month and Day| -->
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- END LOGO -->
+        
+              <!-- BEGIN NAVIGATION -->
+              <tr>
+                <td bgcolor=3D"#14214D">
+                  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" a=
+lign=3D"left">
+                    <tr>
+                      <td valign=3D"bottom" style=3D"font-family:Arial, Hel=
+vetica, sans-serif; color:#304cb2; font-size:12px; font-weight:bold; paddin=
+g-top:14px; vertical-align: bottom; padding-bottom:10px;">
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3976&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"color:#f=
+fffff; text-decoration:none"><span style=3D"color:#ffffff; text-decoration:=
+none">AIR</span>
+                        </a>
+                      </td>
+                      <td valign=3D"bottom" style=3D"font-family:Arial, Hel=
+vetica, sans-serif; color:#304cb2; font-size:12px; font-weight:bold; paddin=
+g-top:14px; padding-left:20px; padding-right:20px; vertical-align: bottom; =
+padding-bottom:10px;">
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3977&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"color:#f=
+fffff; text-decoration:none"><span style=3D"color:#ffffff; text-decoration:=
+none">PARTNERS</span>
+                        </a>
+                      </td>
+                      <td valign=3D"bottom" style=3D"font-family:Arial, Hel=
+vetica, sans-serif; color:#304cb2; font-size:12px; font-weight:bold; paddin=
+g-top:14px; vertical-align: bottom; padding-bottom:10px;">
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3978&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"color:#f=
+fffff; text-decoration:none"><span style=3D"color:#ffffff; text-decoration:=
+none">RAPID REWARDS</span>
+                        </a>
+                      </td>
+                      <td valign=3D"bottom" style=3D"font-family:Arial, Hel=
+vetica, sans-serif; color:#304cb2; font-size:12px; font-weight:bold; paddin=
+g-top:14px; padding-left:20px; padding-right:20px; vertical-align: bottom; =
+padding-bottom:10px;">
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3979&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"color:#f=
+fffff; text-decoration:none"><span style=3D"color:#ffffff; text-decoration:=
+none">ACCOUNT LOGIN</span>
+                        </a>
+                      </td>    
+                    </tr>
+                  </table>
+                  <table width=3D"143" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0" align=3D"right">
+                    <tr>
+                      <td align=3D"right" style=3D"padding-top:5px; padding=
+-bottom:10px;">
+                        &nbsp;
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <!-- END NAVIGATION -->
+        
+              <!-- BEGIN TOP PORTION -->
+              <tr>
+                <td bgcolor=3D"#14214D">
+                  <table width=3D"600" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0">
+                    
+                    <!-- BEGIN HERO -->      
+                    <tr>
+                      <td bgcolor=3D"#14214D">
+                        <table width=3D"600" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0">
+                          <tr>
+                            <td width=3D"600" valign=3D"top" style=3D"verti=
+cal-align: top;">
+                              <!--  CONTENT_REGION_|Hero| -->
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- END HERO -->
+                    
+                    <!-- BEGIN COPY --> 
+
+  <tr>
+    <td bgcolor=3D"#ffffff" align=3D"left" style=3D"color:#304cb2; font-siz=
+e:20px; font-family:Arial, Helvetica, sans-serif; font-weight:bold; padding=
+-top:20px; padding-left:20px; padding-bottom:18px;">
+      Dear  Bipinkumar Bhakta,
+    </td>
+  </tr>
+  <tr>
+    <td bgcolor=3D"#ffffff" align=3D"left" style=3D"color:#636363; font-siz=
+e:13px; font-family:Arial, Helvetica, sans-serif; line-height:18px; padding=
+-left:20px; padding-right:20px; padding-bottom:20px;">
+        Your Rapid Rewards=AE account balance has been adjusted due to a ca=
+ncellation or change of an itinerary booked using your Rapid Rewards Points=
+. You can review your account balance on <a href=3D"https://t.ifly.southwes=
+t.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb397a&RSD=3D0000&RMID=3DEPTSRFND&SRC=3D=
+MAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa=
+70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3">=
+<strong>Southwest.com</strong></a>&reg;.
+        <br />
+        <br />
+        We appreciate your participation in Rapid Rewards and look forward =
+to seeing you onboard soon.
+        <br />
+        <br />
+        -Your friends at Rapid Rewards
+    </td>
+  </tr>
+   </td>
+  </tr>
+</table>
+
+</table>
+  </td>
+</tr>     
+              <tr>
+                <td valign=3D"bottom" bgcolor=3D"#14214D" height=3D"10" sty=
+le=3D"font-size:6px; vertical-align: bottom;">
+                  <img src=3D"http://res.ifly.southwest.com/res/southwe_rt_=
+prod2/spacer.gif" style=3D"display:block"/>
+                </td>
+              </tr>
+              
+              <!-- BEGIN FOOTER NAVIGATION -->  
+              <tr>
+                <td bgcolor=3D"#F5F5F5">
+                  <table width=3D"600" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0">
+                    <tr>
+                      <td bgcolor=3D"#F5F5F5" style=3D"padding: 15px 30px;"=
+>
+                        <table width=3D"100%" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0">
+                          <tbody>
+                            <tr>
+                              
+                              <th class=3D"split" valign=3D"top" style=3D"p=
+adding: 0;">
+                                <table role=3D"presentation" class=3D"colum=
+n c1" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                  <tbody>
+                                    <tr>
+                                      <td class=3D"reward-tracker" valign=
+=3D"top" style=3D"padding-right: 15px;">
+                                        <table role=3D"presentation" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                          <tbody>
+                                            <tr>
+                                              
+                                              <th aria-hidden=3D"true" clas=
+s=3D"split" valign=3D"top" style=3D"padding: 0; font-weight: normal;">
+                                                <table width=3D"45" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                                  <tbody>
+                                                    <tr>
+                                                      <td valign=3D"top" st=
+yle=3D"padding-right: 15px; font-size: 0; line-height: 0;">
+                                                        <a _label=3D"Footer=
+_Transfarency" href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8fb=
+3974,8fb397b&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRID=
+=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMB=
+ER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"color: #304CB2; tex=
+t-decoration: none;"><img src=3D"http://res.ifly.southwest.com/res/southwe_=
+rt_prod2/calendar.png" alt=3D"" width=3D"30" border=3D"0" style=3D"display:=
+ block;"/>
+                                                        </a>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </th>
+                                              
+                                              <th class=3D"split" valign=3D=
+"top" style=3D"padding: 0; font-weight: normal;">
+                                                <table role=3D"presentation=
+" class=3D"full" align=3D"left" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0">
+                                                  <tbody>
+                                                    <tr>
+                                                      <td valign=3D"top">
+                                                        <p class=3D"head" s=
+tyle=3D"color: #304CB2; font-size: 14px; font-weight: bold; font-family: Ar=
+ial, Helvetica, sans-serif; text-align: left; Margin: 0 0 5px 0;">
+                                                          <a _label=3D"Foot=
+er_Transfarency" href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8=
+fb3974,8fb397c&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRI=
+D=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUM=
+BER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"color: #304CB2; te=
+xt-decoration: none;">Rewards&nbsp;seats&nbsp;only&nbsp;on<br/>days&nbsp;en=
+ding&nbsp;in&nbsp;"y."</a>
+                                                        </p>
+                                                        <p style=3D"color: =
+#111B40; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text-a=
+lign: left; Margin: 0;">
+                                                          <a _label=3D"Foot=
+er_Transfarency" href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8=
+fb3974,8fb397d&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRI=
+D=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUM=
+BER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"color: #111B40; te=
+xt-decoration: none;">That's Trans<strong>fare</strong>ncy&reg;.</a>
+                                                        </p>
+                                                      </td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </th>
+                                              
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </th>
+                              
+                              <th class=3D"split" valign=3D"top" style=3D"p=
+adding: 0;">
+                                <table role=3D"presentation" class=3D"colum=
+n c2" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                  <tbody>
+                                    <tr>
+                                      <td valign=3D"top" style=3D"padding-r=
+ight: 15px;">
+                                        <p class=3D"head" style=3D"color: #=
+616161; font-size: 12px; font-weight: bold; font-family: Arial, Helvetica, =
+sans-serif; text-align: left; Margin: 0 0 5px 0;">
+                                          Connect with us
+                                        </p>
+                                        <p style=3D"color: #616161; font-si=
+ze: 12px; font-family: Arial, Helvetica, sans-serif; text-align: left; Marg=
+in: 0;">
+                                          <a _label=3D"Footer_Twitter" href=
+=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb397e&RSD=3D=
+0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52eae6=
+d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd7=
+2a62039414e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;"=
+><img alt=3D"Twitter" height=3D"22" src=3D"http://res.ifly.southwest.com/re=
+s/southwe_rt_prod2/swa_connect_tw.jpg" style=3D"display: inline; border: 0;=
+" width=3D"22" />
+                                          </a>&nbsp;
+                                          <a _label=3D"Footer_Facebook" hre=
+f=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb397f&RSD=
+=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52e=
+ae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30c=
+fd72a62039414e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: non=
+e;"><img alt=3D"Facebook" height=3D"22" src=3D"http://res.ifly.southwest.co=
+m/res/southwe_rt_prod2/swa_connect_fb.jpg" style=3D"display: inline; border=
+: 0;" width=3D"22" />
+                                          </a>&nbsp;
+                                          <a _label=3D"Footer_Instagram" hr=
+ef=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb3980&RSD=
+=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52e=
+ae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30c=
+fd72a62039414e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: non=
+e;"><img alt=3D"Instagram" height=3D"22" src=3D"http://res.ifly.southwest.c=
+om/res/southwe_rt_prod2/swa_connect_insta.jpg" style=3D"display: inline; bo=
+rder: 0;" width=3D"22" />
+                                          </a>&nbsp;
+                                          <a _label=3D"Footer_YouTube" href=
+=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb3981&RSD=3D=
+0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52eae6=
+d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd7=
+2a62039414e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;"=
+><img alt=3D"YouTube" height=3D"22" src=3D"http://res.ifly.southwest.com/re=
+s/southwe_rt_prod2/swa_connect_yt.jpg" style=3D"display: inline; border: 0;=
+" width=3D"22" />
+                                          </a>&nbsp;
+                                          <a _label=3D"Footer_Community" hr=
+ef=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb3982&RSD=
+=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52e=
+ae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30c=
+fd72a62039414e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: non=
+e;"><img alt=3D"Community" height=3D"22" src=3D"http://res.ifly.southwest.c=
+om/res/southwe_rt_prod2/ico-community.png" style=3D"display: inline; border=
+: 0;" width=3D"22" />
+                                          </a>
+                                        </p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </th>
+                              
+                              <th class=3D"split" valign=3D"top" style=3D"p=
+adding: 0;">
+                                <table role=3D"presentation" class=3D"colum=
+n c3" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                  <tbody>
+                                    <tr>
+                                      <td valing=3D"top">
+                                        <p class=3D"head" style=3D"color: #=
+616161; font-size: 12px; font-weight: bold; font-family: Arial, Helvetica, =
+sans-serif; text-align: left; Margin: 0 0 5px 0;">
+                                          Mobile&nbsp;app
+                                        </p>
+                                        <p style=3D"color: #616161; font-si=
+ze: 12px; font-family: Arial, Helvetica, sans-serif; text-align: left; Marg=
+in: 0;">
+                                          <a _label=3D"Footer_App" href=3D"=
+https://t.ifly.southwest.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb3983&RSD=3D0000=
+&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52eae6d734=
+330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62=
+039414e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;"><im=
+g class=3D"hide" src=3D"http://res.ifly.southwest.com/res/southwe_rt_prod2/=
+swa_mobile_app.jpg" alt=3D"app" width=3D"14" border=3D"0" style=3D"display:=
+ inline;" />
+                                            <span class=3D"m-span" style=3D=
+"color: #FFFFFF; font-size: 1px;">Get the mobile app</span>
+                                          </a>
+                                        </p>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </th>
+                              
+                            </tr>
+                          </tbody>  
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=3D"#F5F5F5">
+                        <img src=3D"http://res.ifly.southwest.com/res/south=
+we_rt_prod2/swa_ftr_second_div.jpg" width=3D"600" height=3D"29"/>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=3D"#F5F5F5" align=3D"center" style=3D"fon=
+t-family:Arial, Helvetica, sans-serif; font-size:11px; color:#304cb2;">
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3984&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"text-dec=
+oration:none; color:#304cb2;">Southwest.com&reg;</a>&nbsp;
+                        <span style=3D"color:#9b9b9b;">|</span>&nbsp;
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3985&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"text-dec=
+oration:none; color:#304cb2;">Update preferences</a>&nbsp;
+                        <span style=3D"color:#9b9b9b;">|</span>&nbsp;
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3986&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"text-dec=
+oration:none; color:#304cb2;">Rapid Rewards Credit Card</a>&nbsp;
+                        <span style=3D"color:#9b9b9b;">|</span>&nbsp;
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3987&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"text-dec=
+oration:none; color:#304cb2;">View all offers</a>&nbsp;
+                        <span style=3D"color:#9b9b9b;">|</span>&nbsp;
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3988&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"text-dec=
+oration:none; color:#304cb2;">Privacy</a>&nbsp;
+                        <span style=3D"color:#9b9b9b;">|</span>&nbsp;
+                        <a href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb3989&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3" style=3D"text-dec=
+oration:none; color:#304cb2;">Contact Us</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor=3D"#F5F5F5">
+                       <img src=3D"http://res.ifly.southwest.com/res/southw=
+e_rt_prod2/swa_ftr_second_div.jpg" width=3D"600" height=3D"29"/>
+                      </td>
+                    </tr>
+                    <!-- END FOOTER NAVIGATION -->
+        
+                    <!-- BEGIN TERMS AND CONDITIONS -->  
+                    <tr>
+                      <td bgcolor=3D"#F5F5F5" style=3D"color:#636363; font-=
+family:Arial, Helvetica, sans-serif; font-size:10px; padding-left:20px; pad=
+ding-right:20px;" align=3D"left">
+                      
+                       <!--  CONTENT_REGION_|Terms 1| -->
+                        
+                        
+                        
+                          
+        
+                      </td>
+                    </tr>
+                    <!-- END TERMS AND CONDITIONS -->
+        
+                    <!-- BEGIN STANDARD FOOTER TERMS -->  
+                    <tr>
+                      <td bgcolor=3D"#F5F5F5" style=3D"color:#636363; font-=
+family:Arial, Helvetica, sans-serif; font-size:10px; padding-left:20px; pad=
+ding-right:20px;" align=3D"left">
+                        <br />
+                        <a style=3D"color: #304cb2;" href=3D"https://t.ifly=
+.southwest.com/r/=3Fid=3Dh3169aea4,8fb3974,8fb398c&RSD=3D0000&RMID=3DEPTSRF=
+ND&SRC=3DMAILTXNRREPTSRFND110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c=
+5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d7=
+28311c3">All Rapid Rewards rules and regulations apply.</a><br />
+                        <br />
+                        Member account information is an estimate for a spe=
+cific point in time. Please reference your Rapid Rewards&reg; account on <a=
+ style=3D"color: #304cb2;" href=3D"https://t.ifly.southwest.com/r/=3Fid=3Dh=
+3169aea4,8fb3974,8fb398d&RSD=3D0000&RMID=3DEPTSRFND&SRC=3DMAILTXNRREPTSRFND=
+110315&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9f1c2fa70c3a8920abb45130=
+854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728311c3"><strong>Southwest=
+.com</strong></a>&reg; for your most current account information.<br />
+                        <br />
+                        Cualquier informaci&oacute;n publicitaria, promocio=
+nal o de mercadotecnia contenida en este correo electr&oacute;nico solo ser=
+&aacute; efectiva y &uacute;nicamente ser&aacute; aplicable en los Estados =
+Unidos de Am&eacute;rica.<br />
+                        <br />
+                        This is a post-only mailing from Southwest Airlines=
+. Please do not attempt to respond to this message.<br />
+                        <br />
+                        Southwest Airlines<br />
+                        2702 Love Field Drive<br />
+                        Dallas, TX 75235<br />
+                        <br />
+                        &copy; Copyright 2020 Southwest Airlines Co. All Ri=
+ghts Reserved.<br />
+                        <br />
+                        
+                        <img src=3D"http://swa.demdex.net/event=3Fc_pagenam=
+e=3DEmail%20Open&c_evar45=3D64404373&c_evar38=3Da4d68d26b9d52eae6d734330dac=
+7653563c5f9f1c2fa70c3a8920abb45130854&c_evar39=3D_EPTSRFND&c_evar65=3D0000&=
+c_campaign=3DMAILTXNRREPTSRFND110315&c_event=3Devent16&d_rand=3D19212162478=
+67615" width=3D"1" height=3D"1" border=3D"0" style=3D"display: block;" />
+                        <!--  <img src=3D "http://swa.demdex.net/event=3Fc_=
+pagename=3DEmail%20Open&c_evar45=3D$MEMBERNUMBER$&c_evar38=3D$secureDigestA=
+sHex(lookup(EMAILADDRESS),SHA-256)$&c_evar39=3D$CAMPAIGNNAME()$&c_evar65=3D=
+0000&c_campaign=3D$lookup(SRC)$&c_event=3Devent16&d_rand=3D$lookup(PixRando=
+mNumber)$" width=3D"1" height=3D"1" border=3D"0" style=3D"display: block" /=
+>  -->
+                      </td>
+                    </tr>
+                    <!-- END STANDARD FOOTER TERMS -->
+                    
+                  </table>
+                </td>
+              </tr>
+              
+              <tr>
+                <td valign=3D"bottom" bgcolor=3D"#14214D" height=3D"10" sty=
+le=3D"font-size:6px; vertical-align: bottom;">
+                  <img src=3D"http://res.ifly.southwest.com/res/southwe_rt_=
+prod2/spacer.gif" style=3D"display:block"/>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+</table>
+<img height=3D'0' width=3D'0' alt=3D'' src=3D'https://t.ifly.southwest.com/=
+r/=3Fid=3Dh3169aea4,8fb3974,1'/></body>
+</html>
+

@@ -1,0 +1,874 @@
+Delivered-To: bdbhakta1968@gmail.com
+Received: by 2002:a4a:c407:0:0:0:0:0 with SMTP id y7csp621430oop;
+        Wed, 30 Oct 2019 23:00:02 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqyLcZakT8cGc69A1KQBGD46u1oUbEY9vm+8Xwi/LcDZQUvi8eHD3J113rwJa7Ud7jX2dJkV
+X-Received: by 2002:a92:d3d2:: with SMTP id c18mr34748ilh.19.1572501602857;
+        Wed, 30 Oct 2019 23:00:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1572501602; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qHZnjS/9gsWsAytDY3V2bbV8DW1+82la/O18CVp9nT666PwKuR1gAknygp2Xdo0YMi
+         /khJFpXDn+adeCkQr5NtdT0C0qDlnugc3dFU6HfCDfq6BSAbY398vUWEsZLGoXymFrGq
+         0ZpBu5tyMTmRDjvtJVxLYxU7GovfvXiSRrHDFcfqjGk54RDYP+qI5I9dNGRmsbWUlIoI
+         j8VQiD1XGFKjlyF+4oyROy9wdhgbOOU4s5bL58XIu4uFDNvOHDmWq2hFhJlfR2kGghjH
+         rJ/pDSCznP7irakW4vUuc+jyZOKGTymdkxwySjzNBWXxn3vfyBnJmrmgzTPLJ90c9HJo
+         c+lA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:reply-to:from:message-id:date:mime-version
+         :dkim-signature:dkim-signature;
+        bh=OjeNjBE5A0PUPDoIUfS4LFSVIhsUrZle7L8axvvQc9c=;
+        b=V6YuiwphgofN4tcQ80GmWzwNKuNM2itk4FKv/ZqN+uZcnv3pH6xNpGpj+Yee3jw3sL
+         O4AaqnETEXdni4pXKKPRWAMmkBgPMPXWL30ReJqGaPEvEFFiSTnz87HuurU6/hK/idjl
+         1nbLM8cjVZPrBOOVV+2Og7YBSmaZ7RESvjsb9EeJ2u9rd0v1J1phRIomk6fNuQhPm9jr
+         iREjVtfXharlL/zQzn7b/h4BR5jaY1tf38lpXeFNCzAyzAxS/haJJXx6As0hxadK8TWQ
+         dfbfqEqYMLS3dskCHGVlRkvdSD5QyORXchcPNXblmowo/nTl84oby2rrHyby14622Ty4
+         2Tmg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=policy (weak key) header.i=@travelemail.res12.com header.s=ix header.b=YJbwpVMA;
+       dkim=pass header.i=@ixfr.com header.s=ixfactor header.b=XGwY8uxc;
+       spf=pass (google.com: domain of gjl.jlki.ijijelhe.tx@ixfr.com designates 65.52.12.59 as permitted sender) smtp.mailfrom=gjl.jlki.ijijelhe.tx@ixfr.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=travelemail.res12.com
+Return-Path: <gjl.jlki.ijijelhe.tx@ixfr.com>
+Received: from 200.mta-cx1-ncus.msg25.io (200.mta-cx1-ncus.msg25.io. [65.52.12.59])
+        by mx.google.com with ESMTPS id u189si6671008jab.20.2019.10.30.23.00.02
+        for <bdbhakta1968@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 30 Oct 2019 23:00:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of gjl.jlki.ijijelhe.tx@ixfr.com designates 65.52.12.59 as permitted sender) client-ip=65.52.12.59;
+Authentication-Results: mx.google.com;
+       dkim=policy (weak key) header.i=@travelemail.res12.com header.s=ix header.b=YJbwpVMA;
+       dkim=pass header.i=@ixfr.com header.s=ixfactor header.b=XGwY8uxc;
+       spf=pass (google.com: domain of gjl.jlki.ijijelhe.tx@ixfr.com designates 65.52.12.59 as permitted sender) smtp.mailfrom=gjl.jlki.ijijelhe.tx@ixfr.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=travelemail.res12.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; s=ix; d=travelemail.res12.com;
+ h=MIME-Version:Date:Message-ID:Content-Type:From:Reply-To:To:Subject;
+ i=donotreply@travelemail.res12.com;
+ bh=TpPRTx8huqEc7X/o9Pum4LpW839h64DFsiC+DQzUh6U=;
+ b=YJbwpVMAfUXqRJM0HDR1dDkTN/0D+3wAAclrzEGVOyoIu49hNw1c4w+nV0ZK9idrYCfbl6uUwWom
+   ZH8V5ye/nw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; s=ixfactor; d=ixfr.com;
+ h=MIME-Version:Date:Message-ID:Content-Type:From:Reply-To:To:Subject;
+ bh=TpPRTx8huqEc7X/o9Pum4LpW839h64DFsiC+DQzUh6U=;
+ b=XGwY8uxcc6dO8EhFgTFA/Ny5Du8CrQQr1GYy0G320B4iO/eOV1uWC/vIEQof5z5LecVW2f1hH4+d
+   ftxhHcoz29Y+bkCZNMrI+RsJeMh92KgvHKx9skX9glp7OmOME6YjtSQsBwVvtGfYIKJdsjHaDIjb
+   iIQNzJt4EDt7hIUiITU=
+MIME-Version: 1.0
+Date: Thu, 31 Oct 2019 01:00:02 -0500
+Message-ID: <F1E519BFA5F9891ED9FA539379A0FA58EDD5A214@iXcampaign0Web>
+Content-Type: multipart/alternative; boundary="------------070005020001030002040103"
+X-Priority: 3 (Normal)
+From: "Chase Ultimate Rewards Travel" <donotreply@travelemail.res12.com>
+x-ix: 0/gjl/0/0/0/0/ijijelhe/jlki
+Reply-To: donotreply@travelemail.res12.com
+To: bdbhakta1968@gmail.com
+Subject: =?utf-8?B?VVJHRU5UIOKAkyBZb3VyIEZsaWc=?=
+ =?utf-8?B?aHQgU2NoZWR1bGUgSGFzIENo?=
+ =?utf-8?B?YW5nZWQgZm9yIENoYXNlIFVs?=
+ =?utf-8?B?dGltYXRlIFJld2FyZHMgVHJh?=
+ =?utf-8?B?dmVsIFRyaXAgSUQ6IFRHTlNG?=
+ =?utf-8?B?VlhRNg==?=
+
+--------------070005020001030002040103
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Chase Ultimate Rewards
+
+
+
+
+
+Trip ID:
+TGNSFVXQ6
+if you have any questions,
+please call:
+1-866-951-6592
+
+
+
+
+Dear amar bhakta,
+We wanted to make you aware that the airline has changed your flight detail=
+s. Your new flight details are shown below and in your itinerary found in M=
+y Trips at Ultimate Rewards (http://ultimaterewards.com) .
+
+If the new schedule needs to be changed, please call us at 1-866-951-6592 a=
+nd reference your Trip ID. If you're outside of the U.S., call the internat=
+ional number on the back of your Chase card.
+
+Enjoy your trip!
+
+
+
+
+Real ID Requirements
+Approved, government issued photo identification is required at check in an=
+d must match the full name on the reservation for travel. Due to the Real I=
+D requirements, your driver=E2=80=99s license or ID card may not be accepte=
+d for travel after certain dates.
+
+For the most current information on the Real ID requirements, please visit:=
+ https://www.dhs.goveal-id (https://www.dhs.gov/real-id) .
+
+
+
+
+
+Check out our suggestions for
+what to see and do on your trip
+in our Explore (https://ultimaterewardspoints.chase.com/travel/explore/cate=
+gories/) section.
+You can always access your
+itinerary in the Trips (https://ultimaterewardspoints.chase.com/initialize-=
+session?url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers=
+%2fReceptionDesk.ashx%3fpage%3dtravelplanlist) section.
+
+Changed:Flights
+
+Flight Confirmation #
+WOZSVD
+
+Agency Reference #
+MM5I3D
+
+Departing Flight
+1 Ticket(s)  | Sat, Dec 21
+
+
+Alaska Airlines
+Alaska Airlines
+AS 3324  *
+Saver
+Economy (V)
+Embraer 175
+*Operated by SKYWEST AIRLINES AS ALASKASKYWEST
+
+
+
+Los Angeles
+1:40 PM
+LAX
+Sat, Dec 21
+3hr 13min
+Non-stop
+
+Dallas
+6:53 PM
+DAL
+Sat, Dec 21
+
+
+Additional Baggage Fees (https://www.airlinebaggagecosts.com/?lcid=3D1033&c=
+id=3D3142) may apply.
+
+
+
+
+
+Passenger Information
+ Request a Seat (https://ultimaterewardspoints.chase.com/initialize-session=
+?url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fRece=
+ptionDesk.ashx%3fpage%3dseatmap%26OrdID%3d51192519%26tpi%3d11296326%26tpl%3=
+dTGNSFVXQ6)=20
+
+
+
+Passenger
+Flight
+
+
+amar  bhakta
+Alaska Airlines 3324
+
+
+
+
+Rules and Policies
+Changes or Cancellations
+ -	If your reservation was made more than 7 days prior to your travel date:=
+Cancellation is allowed in most cases before 9pm Mountain Time the day afte=
+r you book your ticket for a full refund of the base fare and taxes, with n=
+o airline-imposed cancellation fee.  A few airlines, such as Spirit, Fronti=
+er, Allegiant and Southwest Airlines, may have different timelines for canc=
+ellations. Call us for details at 1-866-951-6592.
+ -	If your reservation was made 7 days or less prior to your travel date:On=
+ly certain airlines permit free cancellation and a refund of the base fare =
+and taxes, with no airline-imposed cancellation fee, until 9pm Mountain Tim=
+e the day after your ticket is booked. A few airlines, such as Spirit, Fron=
+tier, Allegiant and Southwest Airlines, may have different timelines for ca=
+ncellations. Airline Fare Rules can be viewed online on your Trip Confirmat=
+ion (https://ultimaterewardspoints.chase.com/initialize-session?url=3Dhttps=
+%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fReceptionDesk.as=
+hx%3fpage%3dtravelplanDetail%26tpi%3dTGNSFVXQ6_11296326%26ordid%3d51192519)=
+ page.
+ -	For changes or cancellations outside of the free cancellation period see=
+ the Refunds section below.
+ -	For itinerary modifications, you will need to cancel your existing booki=
+ng first and rebook at current rates and availability.
+ -	If you cancel within the permissible timeframe, refunds are issued in th=
+e form of your original payment and may take up to 2-3 days to process.
+Refunds
+ -	This ticket isnon-refundable.
+ -	Some non-refundable tickets do not allow any changes. Some non-refundabl=
+e tickets can be applied (for a limited time) toward future travel, but all=
+ changes to your itinerary may result in a fare adjustment and will incur a=
+ per ticket airline change fee. Airline Fare Rules can be viewed online on =
+your Trip Confirmation (https://ultimaterewardspoints.chase.com/initialize-=
+session?url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers=
+%2fReceptionDesk.ashx%3fpage%3dtravelplanDetail%26tpi%3dTGNSFVXQ6_11296326%=
+26ordid%3d51192519) page.
+ -	Changes or cancellations can be made online from your Trip Confirmation =
+(https://ultimaterewardspoints.chase.com/initialize-session?url=3Dhttps%3a%=
+2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fReceptionDesk.ashx%3=
+fpage%3dtravelplanDetail%26tpi%3dTGNSFVXQ6_11296326%26ordid%3d51192519) pag=
+e or by calling us at 1-866-951-6592.
+ -	When an itinerary is modified and rebooked, the original fare may no lon=
+ger be available and the current fare may be higher than the amount origina=
+lly booked. The cardholder is responsible for paying the current rate.
+General
+ -	All tickets are non-transferable.
+ -	Carry-on baggage restrictions will apply. Your selected airline's baggag=
+e fees will apply.  Airlines may charge additional fees for miscellaneous s=
+ervices such as advance seat selection, food and beverage. Fees vary by air=
+line so you must contact the airline directly or check their website for up=
+ to date information and pricing details.
+ -	A small number of air carriers may require us to confirm flight availabi=
+lity when booking. If there is any issue with availability, a travel repres=
+entative will contact you within 24 hours to make alternate flight arrangem=
+ents at no additional cost.
+ -	Government-issued photo identification is required at check-in andmust m=
+atch the name on the reservation.If this is an international flight, this r=
+eservation requires a passport and may require a visa and satisfaction of h=
+ealth requirements. Please contact the consulate of the destination country=
+ for current visa/passport and other entry requirements.
+ -	Your personal data will be processed in accordance with the applicable c=
+arrier=E2=80=99s privacy policy and, if your booking is made via a reservat=
+ion system provider (=E2=80=9CGDS=E2=80=9D), with its privacy policy. These=
+ are available at https://www.iatatravelcentre.com/privacy.htm or from the =
+carrier or GDS directly. You should read this documentation, which applies =
+to your booking and specifies, for example, how your personal data is colle=
+cted, stored, used, disclosed and transferred.
+ -	Please refer to the Travel Disclosures (https://ultimaterewardstraveldv.=
+chase.com/Content?utm_content=3DCancellation&utm_source=3Dixcampaign&utm_me=
+dium=3Demail&utm_term=3D&utm_campaign=3DTransactionGroup+5735#TravelTerms) =
+for more information.
+
+
+Our Favorite Apps
+
+
+
+ GateGuru (http://www.tripadvisor.com/apps)=20
+
+ TripAdvisor (http://www.tripadvisor.com/apps)=20
+
+ Tripadvisor City Guides (http://www.tripadvisor.com/apps-icityguides)=20
+
+
+
+
+
+ Afar (http://www.afar.com/mobile-app)=20
+
+ Currency Converter (http://simplesimple.co/currency/)=20
+
+
+
+Want to book something else?
+
+ book a flight (https://ultimaterewardspoints.chase.com/initialize-session?=
+url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fRecep=
+tionDesk.ashx%3fpage%3dresultsair%26verb%3dsearch%26tTyp%3dRT%26arLoc1%3dDA=
+L%26dpLoc1%3dLAX%26date1%3d12%2f21%2f2019%26retDate1%3d12%2f28%2f2019%26adC=
+nt%3d1)=20
+ book a car rental (https://ultimaterewardspoints.chase.com/initialize-sess=
+ion?url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fR=
+eceptionDesk.ashx%3fpage%3dresultscar%26verb%3dsearch%26picLoc%3dDAL%26drpL=
+oc%3dDAL%26picDt%3d12%2f21%2f2019%26drpDt%3d12%2f28%2f2019%26picTime%3d1300=
+%26drpTime%3d1300)=20
+ book a hotel (https://ultimaterewardspoints.chase.com/initialize-session?u=
+rl=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fRecept=
+ionDesk.ashx%3fpage%3dresultshotel%26verb%3dsearch%26locNm%3dDAL%26cinDate%=
+3d12%2f21%2f2019%26coutDate%3d12%2f28%2f2019%26adtCnt%3d1)=20
+ book an activity (https://ultimaterewardspoints.chase.com/initialize-sessi=
+on?url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fRe=
+ceptionDesk.ashx%3fpage%3dresultsactivity%26verb%3dsearch%26loc%3dDAL%26sDa=
+te%3d12%2f21%2f2019%26eDate%3d12%2f28%2f2019)=20
+
+
+
+Email Security Information
+
+
+
+Email intended for: amar bhakta
+
+For your account ending in:
+
+If you have concerns about the authenticity of this message, please visit c=
+hase.com/customerservice (https://www.chase.com/digital/resources/customer-=
+service) for options on how to contact us.
+
+
+About This Message
+
+This service email gives you updates and information about your Chase relat=
+ionship. If you need travel assistance, please call us at 1-866-951-6592.
+
+This email was sent from an unmonitored mailbox. Go to chase.com/customerse=
+rvice (https://www.chase.com/digital/resources/customer-service) for option=
+s on how to contact us.
+
+Your privacy is important to us. See our online Security Center (https://ww=
+w.chase.com/digital/resources/privacy-security) to learn how to protect you=
+r information.
+
+Chase Privacy Operations
+P.O. Box 659752
+San Antonio, Texas 78265-9752
+
+=C2=A92019 JPMorgan Chase & Co.
+--------------070005020001030002040103
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+		<title>Chase Confirmation</title>
+	</head>
+	<body>
+		<table align=3D"center" style=3D"width: 586px; background-color: rgb(243,=
+ 246, 248);">
+			<tbody>
+				<tr>
+					<td style=3D"padding: 20px;">
+						<table align=3D"center" style=3D"width: 546px;" cellspacing=3D"0" cel=
+lpadding=3D"0">
+							<tbody>
+								<tr>
+									<td style=3D"width: 19px; vertical-align: top;" rowspan=3D"3"><img=
+ style=3D"width: 19px; height: 19px;" alt=3D"" src=3D"http://fls.ixfr.com/8=
+8/257/ChaseHdrCorner.png"></td>
+									<td style=3D"width: 335px;" rowspan=3D"3"><img style=3D"width: 162=
+px; height: 47px;" alt=3D"Chase Ultimate Rewards" src=3D"http://fls.ixfr.co=
+m/88/257/Chase-Logo-LightBk.png"><br></td>
+									<td style=3D"width: 184px; height: 8px; line-height: 8px;"><br> </=
+td>
+									<td style=3D"width: 8px;" rowspan=3D"3">&nbsp;</td>
+								</tr>
+								<tr>
+									<td style=3D"padding: 3px; width: 178px; text-align: center; color=
+: rgb(87, 107, 129); font-family: Arial, Helvetica, sans-serif; font-size: =
+8pt; vertical-align: middle; background-color: rgb(255, 255, 255);">
+										Trip ID:<br>
+										<strong>TGNSFVXQ6</strong><br>
+										if you have any questions,<br>please call:<br><span style=3D"colo=
+r: #246fa5;"><strong>1-866-951-6592</strong></span>
+									</td>
+								</tr>
+								<tr>
+									<td style=3D"width: 184px; height: 8px; line-height: 8px;"><br> </=
+td>
+								</tr>
+							</tbody>
+						</table>
+						<table align=3D"center" style=3D"width: 546px;" cellspacing=3D"0" cel=
+lpadding=3D"0">
+							<tbody>
+								<tr>
+									<td style=3D"padding: 20px; text-align: left; color: rgb(87, 107, =
+129); font-family: Arial, Helvetica, sans-serif; font-size: 14pt; vertical-=
+align: middle; background-color: rgb(255, 255, 255);">
+										Dear amar bhakta,
+										<p style=3D"margin-bottom:1em;">We wanted to make you aware that =
+the airline has changed your flight details. Your new flight details are sh=
+own below and in your itinerary found in My Trips at <a style=3D"color: #24=
+6fa5; text-decoration: none;" title=3D"Ultimate Rewards home page" href =3D=
+ "http://ultimaterewards.com">Ultimate Rewards</a>.</p>
+										<p style=3D"margin-bottom:1em;">If the new schedule needs to be c=
+hanged, please call us at 1-866-951-6592 and reference your Trip ID. If you=
+'re outside of the U.S., call the international number on the back of your =
+Chase card.</p>
+										<p style=3D"margin-bottom:1em;">Enjoy your trip!</p>
+									</td>
+								</tr>
+                <tr>
+                  <td style=3D"padding: 20px; width: 526px; text-align: cen=
+ter; vertical-align: middle; background-color: rgb(255, 255, 255);" >
+                    <table align=3D"center" style=3D"background-color:#FEFB=
+EA; border:2px solid #F7F7D7; padding:20px; color: rgb(87, 107, 129); font-=
+family: Arial, Helvetica, sans-serif; font-size: 12pt;" cellspacing=3D"0" c=
+ellpadding=3D"0">
+                      <tbody><tr>
+                        <td>
+                          <p style=3D"margin-bottom:1em;"><strong>Real ID R=
+equirements</strong></br>
+                            Approved, government issued photo identificatio=
+n is required at check in and must match the full name on the reservation f=
+or travel. Due to the Real ID requirements, your driver=E2=80=99s license o=
+r ID card may not be accepted for travel after certain dates.
+                          </p>
+                          <p style=3D"margin-bottom:1em;">For the most curr=
+ent information on the Real ID requirements, please visit:  <a href =3D "ht=
+tps://www.dhs.gov/real-id" style=3D"color:#246fa5; text-decoration:none;">h=
+ttps://www.dhs.gov/real-id</a>.</p>
+                        </td>
+                      </tr></tbody>
+                    </table>
+                  </td>
+                </tr>
+							</tbody>
+						</table>
+						&nbsp;                   =20
+						<table align=3D"center" style=3D"width: 546px;" cellspacing=3D"0" cel=
+lpadding=3D"0">
+							<tbody>
+								<tr>
+									<td style=3D"text-align: center;" colspan=3D"2"><img style=3D"widt=
+h: 506px; height: 146px;" alt=3D"" src=3D"http://fls.ixfr.com/88/257/Explor=
+eTrip.gif"></td>
+								</tr>
+								<tr>
+									<td style=3D"width: 50%; text-align: center; color: rgb(87, 107, 1=
+29); font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-a=
+lign: top;">
+										Check out our suggestions for<br>
+										what to see and do on your trip<br>
+										in our <a style=3D"color: #246fa5; text-decoration: none;" href =
+=3D "https://ultimaterewardspoints.chase.com/travel/explore/categories/"><s=
+trong>Explore</strong></a> section.
+									</td>
+									<td style=3D"width: 50%; text-align: center; color: rgb(87, 107, 1=
+29); font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-a=
+lign: top;">
+										You can always access your<br>
+										itinerary in the <a style=3D"color: #246fa5; text-decoration: non=
+e;" href =3D "https://ultimaterewardspoints.chase.com/initialize-session?ur=
+l=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fRecepti=
+onDesk.ashx%3fpage%3dtravelplanlist"><strong>Trips</strong></a> section.
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					=09
+				&nbsp;
+					<table style=3D"width:544px; border:1px solid #dce0e3; background-colo=
+r:#ffffff;" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">
+						<tbody><tr>
+							<td style=3D"padding:20px; font-family:Arial, Helvetica, sans-serif;=
+ font-size:12pt; color:#6b6b6b;">
+								<span style=3D"font-size:18pt; color:#576b81;"><span style=3D"color=
+:#cd340b">Changed:</span> Flights</span><br/> <br />
+								<strong>Flight Confirmation #</strong><br/>
+								<span style=3D"font-size:18pt; color:#383838">WOZSVD</span><br/>
+                                				<br/>
+                                				<strong>Agency Reference #</strong><br/=
+>
+                                				MM5I3D
+							</td>
+						</tr>
+             =20
+						<tr>
+							<td style=3D"padding:0 20px; font-family:Arial, Helvetica, sans-seri=
+f; font-size:12px; color:#576b81;">
+								<span style=3D"font-size:18pt; color:#757575;">Departing Flight</sp=
+an><br/>
+								<span style=3D"color:#4c4c4c;"><strong>1 Ticket(s)  | Sat, Dec 21</=
+strong></span>
+							</td>
+						</tr>		=09
+		=09
+						<tr>
+							<td style=3D"padding:20px; font-family:Arial, Helvetica, sans-serif;=
+ font-size:12px; color:#576b81;">
+								<table cellspacing=3D"5" cellpadding=3D"0" style=3D"width:100%;">
+									<tbody><tr>
+										<td style=3D"width:45px; text-align:center; vertical-align:top;" =
+rowspan=3D"3"><img alt=3D"Alaska Airlines" src=3D"https://images.orxenterpr=
+ise.com/Images/Airlines/30x30/AS.JPG" /></td>
+										<td colspan=3D"3" style=3D"font-family:Arial, Helvetica, sans-ser=
+if; font-size:12pt; color:#362f2d;">
+											<strong>Alaska Airlines</strong><br />
+											<span style=3D"font-size:14pt;"><strong>AS 3324  * </strong></sp=
+an><br />
+											<span style=3D"font-size:10pt;">Saver</span></br>
+                      <span style=3D"font-size:10pt;">Economy (V)</span></b=
+r>
+                      <span style=3D"color:#757575; font-size:10pt;">Embrae=
+r 175</span></br>
+                      <span style=3D"color:#757575; font-size:10pt;">*Opera=
+ted by SKYWEST AIRLINES AS ALASKASKYWEST</span></br>
+                      </br>
+										</td>
+									</tr>
+									<tr>
+										<td style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+12pt; color:#6b6b6b; text-align:center;">
+											<strong>Los Angeles</strong><br />
+											<span style=3D"color:#383838; font-size:14pt;">1:40 PM<br />LAX<=
+/span><br />
+											<strong>Sat, Dec 21</strong>
+										</td>
+										<td style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+10pt; color:#6b6b6b; text-align:center;"><img alt=3D"" src=3D"http://fls.ix=
+fr.com/88/257/FlightTimeStart.gif" style=3D"width: 34px; height: 15px; vert=
+ical-align: middle;" /><strong>&nbsp;&nbsp;&nbsp; 3hr 13min&nbsp;&nbsp;&nbs=
+p; 	</strong><img alt=3D"" src=3D"http://fls.ixfr.com/88/257/FlightTimeEnd.=
+gif" style=3D"width: 34px; height: 15px; vertical-align: middle;" /><br />N=
+on-stop<br /> </td>
+										<td style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+12pt; color:#6b6b6b; text-align:center;">
+											<strong>Dallas</strong><br />
+											<span style=3D"color:#383838; font-size:14pt;">6:53 PM<br />DAL<=
+/span><br />
+											<strong>Sat, Dec 21</strong>
+										</td>
+									</tr>
+									<tr>
+										<td colspan=3D"3" style=3D"font-family:Arial, Helvetica, sans-ser=
+if; font-size:10pt; color:#576b81; text-align:center;">
+											&nbsp;<br />Additional <a title=3D"Baggage fees" href =3D "https=
+://www.airlinebaggagecosts.com/?lcid=3D1033&cid=3D3142" style=3D"color:#246=
+fa5; text-decoration:none;"><strong>Baggage Fees</strong></a> may apply.</t=
+d>
+									</tr></tbody>
+								</table>
+							</td>
+						</tr>
+		=09
+						<tr><td style=3D"text-align:center; line-height:1px;"><img alt=3D"" s=
+rc=3D"http://fls.ixfr.com/88/257/HR.gif" style=3D"width: 506px; height: 1px=
+" /></td></tr>
+						<tr>
+							<td style=3D"padding:20px; font-family:Arial, Helvetica, sans-serif;=
+">
+								<table style=3D"width:100%;" cellpadding=3D"0" cellspacing=3D"0">
+									<tbody><tr>
+										<td><span style=3D"font-size:18pt; color:#757575; font-family:Ari=
+al, Helvetica, sans-serif;">Passenger Information</span></td>
+										<td style=3D"text-align:right; vertical-align: bottom: font-famil=
+y:Arial, Helvetica, sans-serif; font-size:12px;"><a title=3D"Request a Seat=
+" href =3D "https://ultimaterewardspoints.chase.com/initialize-session?url=
+=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fReceptio=
+nDesk.ashx%3fpage%3dseatmap%26OrdID%3d51192519%26tpi%3d11296326%26tpl%3dTGN=
+SFVXQ6" style=3D"color:#246fa5; text-decoration:none;"><strong>Request a Se=
+at</strong></a><td>
+									</tr>
+									<tr>
+										<td colspan=3D"2">
+											&nbsp;
+											<table cellspacing=3D"0" cellpadding=3D"0" style=3D"width:100%;"=
+>
+												<tbody><tr>
+													<td style=3D"width:50%; font-family:Arial, Helvetica, sans-ser=
+if; font-size:12px; color:#362f2d; padding:2px 0px;"><strong>Passenger</str=
+ong></td>
+													<td style=3D"width:25%; font-family:Arial, Helvetica, sans-ser=
+if; font-size:12px; color:#362f2d; padding:2px 0px;"><strong>Flight</strong=
+></td>
+													<td style=3D"width:25%; font-family:Arial, Helvetica, sans-ser=
+if; font-size:12px; color:#362f2d; padding:2px 0px;"><strong></strong></td>
+												</tr>
+											=09
+									<tr>
+										<td style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+12px; color:#362f2d; background-color:#ffffff; padding:2px;">amar  bhakta <=
+/td>
+										<td style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+12px; color:#362f2d; background-color:#ffffff; padding:2px;">Alaska Airline=
+s 3324</td>
+										<td style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+12px; color:#362f2d; background-color:#ffffff; padding:2px;">  </td>
+									</tr>
+		=09
+												 =20
+											</tbody>
+                      </table>
+										</td>
+									</tr></tbody>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td style=3D"padding:20px; font-family:Arial, Helvetica, sans-serif;=
+ font-size:18pt; color:#757575;">
+								Rules and Policies
+							=09
+				<br><span style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+12px; color:#757575; font-weight:strong;">Changes or Cancellations</span>
+				<ul style=3D"font-family:Arial, Helvetica, sans-serif; font-size:12px; =
+color:#757575; margin-top:0px;">
+					<li style=3D"margin:0 0 0 -20px;"><u>If your reservation was made more=
+ than 7 days prior to your travel date:</u> Cancellation is allowed in most=
+ cases before 9pm Mountain Time the day after you book your ticket for a fu=
+ll refund of the base fare and taxes, with no airline-imposed cancellation =
+fee.  A few airlines, such as Spirit, Frontier, Allegiant and Southwest Air=
+lines, may have different timelines for cancellations. Call us for details =
+at 1-866-951-6592.</li>
+					<li style=3D"margin:0 0 0 -20px;"><u>If your reservation was made 7 da=
+ys or less prior to your travel date:</u> Only certain airlines permit free=
+ cancellation and a refund of the base fare and taxes, with no airline-impo=
+sed cancellation fee, until 9pm Mountain Time the day after your ticket is =
+booked. A few airlines, such as Spirit, Frontier, Allegiant and Southwest A=
+irlines, may have different timelines for cancellations. Airline Fare Rules=
+ can be viewed online on your <a href =3D "https://ultimaterewardspoints.ch=
+ase.com/initialize-session?url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.=
+com%2fSH%2fHandlers%2fReceptionDesk.ashx%3fpage%3dtravelplanDetail%26tpi%3d=
+TGNSFVXQ6_11296326%26ordid%3d51192519" style=3D"color:#246fa5; text-decorat=
+ion:none; font-weight:bold;">Trip Confirmation</a> page.</li>
+					<li style=3D"margin:0 0 0 -20px;">For changes or cancellations outside=
+ of the free cancellation period see the Refunds section below.</li>
+					<li style=3D"margin:0 0 0 -20px;">For itinerary modifications, you wil=
+l need to cancel your existing booking first and rebook at current rates an=
+d availability.</li>
+					<li style=3D"margin:0 0 0 -20px;">If you cancel within the permissible=
+ timeframe, refunds are issued in the form of your original payment and may=
+ take up to 2-3 days to process.</li>
+				</ul>
+				<span style=3D"font-family:Arial, Helvetica, sans-serif; font-size:12px=
+; color:#757575; font-weight:strong;">Refunds</span>
+				<ul style=3D"font-family:Arial, Helvetica, sans-serif; font-size:12px; =
+color:#757575; margin-top:0px;">
+					<li style=3D"margin:0 0 0 -20px;">This ticket is <strong>non-refundabl=
+e</strong>.</li>
+					<li style=3D"margin:0 0 0 -20px;">Some non-refundable tickets do not a=
+llow any changes. Some non-refundable tickets can be applied (for a limited=
+ time) toward future travel, but all changes to your itinerary may result i=
+n a fare adjustment and will incur a per ticket airline change fee. Airline=
+ Fare Rules can be viewed online on your <a href =3D "https://ultimaterewar=
+dspoints.chase.com/initialize-session?url=3Dhttps%3a%2f%2fultimaterewardstr=
+avel.chase.com%2fSH%2fHandlers%2fReceptionDesk.ashx%3fpage%3dtravelplanDeta=
+il%26tpi%3dTGNSFVXQ6_11296326%26ordid%3d51192519" style=3D"color:#246fa5; t=
+ext-decoration:none; font-weight:bold;">Trip Confirmation</a> page.</li>
+					<li style=3D"margin:0 0 0 -20px;">Changes or cancellations can be made=
+ online from your <a title=3D"Trip Confirmation page" href =3D "https://ult=
+imaterewardspoints.chase.com/initialize-session?url=3Dhttps%3a%2f%2fultimat=
+erewardstravel.chase.com%2fSH%2fHandlers%2fReceptionDesk.ashx%3fpage%3dtrav=
+elplanDetail%26tpi%3dTGNSFVXQ6_11296326%26ordid%3d51192519" style=3D"color:=
+#246fa5; text-decoration:none; font-weight:bold;">Trip Confirmation</a> pag=
+e or by calling us at 1-866-951-6592.</li>
+					<li style=3D"margin:0 0 0 -20px;">When an itinerary is modified and re=
+booked, the original fare may no longer be available and the current fare m=
+ay be higher than the amount originally booked. The cardholder is responsib=
+le for paying the current rate.</li>
+				</ul>
+				<span style=3D"font-family:Arial, Helvetica, sans-serif; font-size:12px=
+; color:#757575; font-weight:strong;">General</span>
+				<ul style=3D"font-family:Arial, Helvetica, sans-serif; font-size:12px; =
+color:#757575; margin-top:0px;">
+					<li style=3D"margin:0 0 0 -20px;">All tickets are non-transferable.</l=
+i>
+					<li style=3D"margin:0 0 0 -20px;">Carry-on baggage restrictions will a=
+pply. Your selected airline's baggage fees will apply.  Airlines may charge=
+ additional fees for miscellaneous services such as advance seat selection,=
+ food and beverage. Fees vary by airline so you must contact the airline di=
+rectly or check their website for up to date information and pricing detail=
+s.</li>
+					<li style=3D"margin:0 0 0 -20px;">A small number of air carriers may r=
+equire us to confirm flight availability when booking. If there is any issu=
+e with availability, a travel representative will contact you within 24 hou=
+rs to make alternate flight arrangements at no additional cost.</li>
+					<li style=3D"margin:0 0 0 -20px;">Government-issued photo identificati=
+on is required at check-in and <u>must match the name on the reservation.</=
+u>  If this is an international flight, this reservation requires a passpor=
+t and may require a visa and satisfaction of health requirements. Please co=
+ntact the consulate of the destination country for current visa/passport an=
+d other entry requirements.</li>
+					<li style=3D"margin:0 0 0 -20px;">Your personal data will be processed=
+ in accordance with the applicable carrier=E2=80=99s privacy policy and, if=
+ your booking is made via a reservation system provider (=E2=80=9CGDS=E2=80=
+=9D), with its privacy policy. These are available at https://www.iatatrave=
+lcentre.com/privacy.htm or from the carrier or GDS directly. You should rea=
+d this documentation, which applies to your booking and specifies, for exam=
+ple, how your personal data is collected, stored, used, disclosed and trans=
+ferred.</li>
+					<li style=3D"margin:0 0 0 -20px;">Please refer to the <a title=3D"Trav=
+el Disclosure" href =3D "https://ultimaterewardstraveldv.chase.com/Content?=
+utm_content=3DCancellation&utm_source=3Dixcampaign&utm_medium=3Demail&utm_t=
+erm=3D&utm_campaign=3DTransactionGroup+5735#TravelTerms" style=3D"color:#24=
+6fa5; text-decoration:none; font-weight:bold;"><strong>Travel Disclosures</=
+strong></a> for more information.</li>
+				</ul>
+		=09
+							</td>
+						</tr></tbody>
+					</table>
+		=09
+					=09
+					=09
+					=09
+						&nbsp;                   =20
+						<table align=3D"center" style=3D"border: 1px solid rgb(220, 224, 227)=
+; border-image: none; width: 544px; background-color: rgb(255, 255, 255);" =
+cellspacing=3D"0" cellpadding=3D"0">
+							<tbody>
+								<tr>
+									<td style=3D"padding: 20px; color: rgb(87, 107, 129); font-family:=
+ Arial, Helvetica, sans-serif; font-size: 12pt;">
+										<span style=3D"font-size: 18pt;">Our Favorite Apps</span><br> <br=
+>
+										<table style=3D"width: 100%;" cellspacing=3D"0" cellpadding=3D"0"=
+>
+											<tbody>
+												<tr>
+													<td>
+														<table style=3D"width: 100%;" cellspacing=3D"0" cellpadding=
+=3D"0">
+															<tbody>
+																<tr>
+																	<td style=3D"width: 33%; text-align: center;"><a href =3D =
+"http://www.tripadvisor.com/apps"><img style=3D"border-width: 0px; width: 1=
+64px; height: 109px;" alt=3D"GateGuru" src=3D"http://fls.ixfr.com/88/257/Ap=
+p_GateGuru.gif"></a></td>
+																	<td style=3D"background-color: rgb(242, 242, 242);"><img a=
+lt=3D"" src=3D"http://fls.ixfr.com/spacer.gif"></td>
+																	<td style=3D"width: 33%; text-align: center;"><a href =3D =
+"http://www.tripadvisor.com/apps"><img style=3D"border-width: 0px; width: 1=
+64px; height: 109px;" alt=3D"TripAdvisor" src=3D"http://fls.ixfr.com/88/257=
+/App_TripAdvisor.gif"></a></td>
+																	<td style=3D"background-color: rgb(242, 242, 242);"><img a=
+lt=3D"" src=3D"http://fls.ixfr.com/spacer.gif"></td>
+																	<td style=3D"width: 33%; text-align: center;"><a href =3D =
+"http://www.tripadvisor.com/apps-icityguides"><img style=3D"border-width: 0=
+px;" alt=3D"Tripadvisor City Guides" src=3D"http://fls.ixfr.com/88/257/App_=
+TripAdvisorCityGuides.gif"></a></td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td style=3D"line-height: 1px; background-color: rgb(242, 242,=
+ 242);" colspan=3D"5"><img alt=3D"" src=3D"http://fls.ixfr.com/spacer.gif">=
+</td>
+												</tr>
+												<tr>
+													<td>
+														<table style=3D"width: 100%;" cellspacing=3D"0" cellpadding=
+=3D"0">
+															<tbody>
+																<tr>
+																	<td style=3D"width: 50%; text-align: center;"><a href =3D =
+"http://www.afar.com/mobile-app"><img style=3D"border-width: 0px; width: 16=
+4px; height: 109px;" alt=3D"Afar" src=3D"http://fls.ixfr.com/88/257/App_Afa=
+r.gif"></a></td>
+																	<td style=3D"background-color: rgb(242, 242, 242);"><img a=
+lt=3D"" src=3D"http://fls.ixfr.com/spacer.gif"></td>
+																	<td style=3D"width: 50%; text-align: center;"><a href =3D =
+"http://simplesimple.co/currency/"><img style=3D"border-width: 0px;" alt=3D=
+"Currency Converter" src=3D"http://fls.ixfr.com/88/257/CurrConvert.gif"></a=
+></td>
+																</tr>
+															</tbody>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						&nbsp;<table style=3D"width:100%; border:1px solid #dce0e3; backgroun=
+d-color:#ffffff;" cellpadding=3D"0" cellspacing=3D"20" align=3D"center"><tb=
+ody><tr><td style=3D"padding:0; font-family:Arial, Helvetica, sans-serif; f=
+ont-size:18pt; color:rgb(87, 107, 129);" colspan=3D"4">Want to book somethi=
+ng else?</td></tr><tr><td style=3D"width:25%; text-align:center;"><a href =
+=3D "https://ultimaterewardspoints.chase.com/initialize-session?url=3Dhttps=
+%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandlers%2fReceptionDesk.as=
+hx%3fpage%3dresultsair%26verb%3dsearch%26tTyp%3dRT%26arLoc1%3dDAL%26dpLoc1%=
+3dLAX%26date1%3d12%2f21%2f2019%26retDate1%3d12%2f28%2f2019%26adCnt%3d1"><im=
+g src=3D"http://fls.ixfr.com/88/257/Travel_Tiles_Flights.png" alt=3D"book a=
+ flight" style=3D"border:none;" /></a></td><td style=3D"width:25%; text-ali=
+gn:center;"><a href =3D "https://ultimaterewardspoints.chase.com/initialize=
+-session?url=3Dhttps%3a%2f%2fultimaterewardstravel.chase.com%2fSH%2fHandler=
+s%2fReceptionDesk.ashx%3fpage%3dresultscar%26verb%3dsearch%26picLoc%3dDAL%2=
+6drpLoc%3dDAL%26picDt%3d12%2f21%2f2019%26drpDt%3d12%2f28%2f2019%26picTime%3=
+d1300%26drpTime%3d1300"><img src=3D"http://fls.ixfr.com/88/257/Travel_Tiles=
+_CarRentals.png" alt=3D"book a car rental" style=3D"border:none;" /></a></t=
+d><td style=3D"width:25%; text-align:center;"><a href =3D "https://ultimate=
+rewardspoints.chase.com/initialize-session?url=3Dhttps%3a%2f%2fultimaterewa=
+rdstravel.chase.com%2fSH%2fHandlers%2fReceptionDesk.ashx%3fpage%3dresultsho=
+tel%26verb%3dsearch%26locNm%3dDAL%26cinDate%3d12%2f21%2f2019%26coutDate%3d1=
+2%2f28%2f2019%26adtCnt%3d1"><img src=3D"http://fls.ixfr.com/88/257/Travel_T=
+iles_Hotels.png" alt=3D"book a hotel" style=3D"border:none;" /></a></td><td=
+ style=3D"width:25%; text-align:center;"><a href =3D "https://ultimaterewar=
+dspoints.chase.com/initialize-session?url=3Dhttps%3a%2f%2fultimaterewardstr=
+avel.chase.com%2fSH%2fHandlers%2fReceptionDesk.ashx%3fpage%3dresultsactivit=
+y%26verb%3dsearch%26loc%3dDAL%26sDate%3d12%2f21%2f2019%26eDate%3d12%2f28%2f=
+2019"><img src=3D"http://fls.ixfr.com/88/257/Travel_Tiles_Activities.png" a=
+lt=3D"book an activity" style=3D"border:none;" /></a></td></tbody></table> =
+                  =20
+					</td>
+				</tr>
+				<tr>
+					<td style=3D"padding: 20px; background-color: rgb(255, 255, 255);">
+						<table style=3D"border: 2px solid #246fa5; border-image: none; width:=
+ 100%; background-color: #246fa5;" cellspacing=3D"0" cellpadding=3D"0">
+							<tbody>
+								<tr>
+									<td style=3D"padding: 5px; width: 50%; text-align: center; color: =
+rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; font-size: 1=
+6pt;">Email Security Information</td>
+									<td style=3D"padding: 5px; background-color: rgb(255, 255, 255);">=
+&nbsp;</td>
+								</tr>
+								<tr>
+									<td style=3D"padding: 15px; color: rgb(0, 0, 0); font-family: Aria=
+l, Helvetica, sans-serif; font-size: 12pt; background-color: rgb(255, 255, =
+255);" colspan=3D"2">
+                    <p style=3D"margin-bottom:1em;"><strong>Email intended =
+for: amar bhakta</strong></p>
+                    <p style=3D"margin-bottom:1em;"><strong>For your accoun=
+t ending in: </strong></p>
+                    <p style=3D"margin-bottom:1em;">If you have concerns ab=
+out the authenticity of this message, please visit <a style=3D"color: #246f=
+a5; text-decoration: none;" href =3D "https://www.chase.com/digital/resourc=
+es/customer-service">chase.com/customerservice</a> for options on how to co=
+ntact us.</p>
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+						&nbsp;                   =20
+						<table style=3D"width: 100%;" cellspacing=3D"0" cellpadding=3D"0">
+							<tbody>
+								<tr>
+									<td style=3D"color: rgb(76, 76, 76); font-family: Arial, Helvetica=
+, sans-serif; font-size: 12pt; vertical-align: top;">
+                    <span style=3D"font-size: 16pt;">About This Message</sp=
+an><br>
+                    <p style=3D"margin-bottom:1em;">This service email give=
+s you updates and information about your Chase relationship. If you need tr=
+avel assistance, please call us at 1-866-951-6592.</p>
+                    <p style=3D"margin-bottom:1em;">This email was sent fro=
+m an unmonitored mailbox. Go to <a style=3D"color: #246fa5;" href =3D "http=
+s://www.chase.com/digital/resources/customer-service">chase.com/customerser=
+vice</a> for options on how to contact us.</p>
+                    <p style=3D"margin-bottom:1em;">Your privacy is importa=
+nt to us. See our online <a style=3D"color: #246fa5;" href =3D "https://www=
+=2Echase.com/digital/resources/privacy-security">Security Center</a> to lea=
+rn how to protect your information.</p>
+                    <p style=3D"margin-bottom:1em;">
+                      Chase Privacy Operations<br>
+                      P.O. Box 659752<br>
+                      San Antonio, Texas 78265-9752
+                    </p>
+                    <p style=3D"margin-bottom:1em;">&copy;2019 JPMorgan Cha=
+se &amp; Co.</p>
+                  </td>								=09
+								</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+=09
+<img src=3D"http://www.ixfr.com/o/0/0/0/0/0/0/gjl/0/jlki/ijijelhe" width=3D=
+"1" height=3D"1"></body>
+</html>
+--------------070005020001030002040103--
+

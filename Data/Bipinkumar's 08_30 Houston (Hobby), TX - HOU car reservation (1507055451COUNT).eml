@@ -1,0 +1,1458 @@
+Delivered-To: bdbhakta1968@gmail.com
+Received: by 2002:a4a:e291:0:0:0:0:0 with SMTP id k17csp5490531oot;
+        Tue, 30 Jul 2019 20:46:32 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwWIxW3VLmMPEV4yl6/CusCcBjGUpiobQovaUjgg9NYH4hVgnMP6ZrOT++Og37fnVTyA7p5
+X-Received: by 2002:a6b:6310:: with SMTP id p16mr10806935iog.118.1564544792642;
+        Tue, 30 Jul 2019 20:46:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1564544792; cv=none;
+        d=google.com; s=arc-20160816;
+        b=iqJ88ZvWQUIGxtg5j40r/KEeF9PZhLRBWC6tNZg89S56ohWkGXmwwv9BEcH8FpoIVd
+         KhcBSWDni9+BF7SgntbtGOnVI+Zn15+xE6FXF3s670nNQBT7QRKZ0ADZYi2SDTsX6GRu
+         lrmGrOTEoB1v7hhfU/B/eNhsCNfMjWVYuB9mSPiA1V2zTNXD1cvtBx0jGsyJo1HVWkI4
+         wzBMVB5xEN2FLLdNBO/T/C9/uz+mHI6tVkFxzDuRsYi9eX1cpZi4Yu8rRKQ4uyVZseB0
+         elLaWZl8ZCAMSpVWJE77IjloVeAota926tywHH4uXrRGqNXgXBKUYeLK01pX3Alfw40f
+         12fg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:messagevalidityduration
+         :messagewebvalidityduration:messageretryperiod:messagemaxretry
+         :affinity:tenantheader:message-id:mime-version:reply-to:to:subject
+         :date:from:domainkey-signature:dkim-signature;
+        bh=Rg/KeqwALVF9FOzfk2E5EOCdOwKL8gWxLzSyfAXfdDM=;
+        b=UEF6YPd6UfiKrXqA1Lh98NYNTRW95l6iWP57UHMJnJHuMX1WoRqRf0bQrA0+ElAxr7
+         zufrmVWjU3VCbv1nPHL5CtzfH4yFaB0inUxecBua4x3WwJxRpzjNMQzYOIQ3TbaHYnw/
+         rfLVWofhN+HRyl3Ofm2lxm3l7wdg4plEbv+VfopBmkQHYSDZp91tH4oqVW27FTNT9Us+
+         DHVQvh9UBIiCnXZRMA7Z2UseLGswpa8GWZOKR6gQBQt5IgZdiC8iKTlzbmEzAQIuSF4Q
+         Boj9kfYAIYd9ledOM7MnvHzxemPCSMIjC1QiFnHIn6EUDFL/Hhy5JHBDpoZK1kmiSkNc
+         e4ww==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ifly.southwest.com header.s=southwest-airlines header.b=TZVNAuCy;
+       spf=pass (google.com: domain of bounce@ifly.southwest.com designates 192.243.228.83 as permitted sender) smtp.mailfrom=bounce@ifly.southwest.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=southwest.com
+Return-Path: <bounce@ifly.southwest.com>
+Received: from r83.ifly.southwest.com (r83.ifly.southwest.com. [192.243.228.83])
+        by mx.google.com with ESMTPS id 3si91720867jai.12.2019.07.30.20.46.31
+        for <bdbhakta1968@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 Jul 2019 20:46:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce@ifly.southwest.com designates 192.243.228.83 as permitted sender) client-ip=192.243.228.83;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ifly.southwest.com header.s=southwest-airlines header.b=TZVNAuCy;
+       spf=pass (google.com: domain of bounce@ifly.southwest.com designates 192.243.228.83 as permitted sender) smtp.mailfrom=bounce@ifly.southwest.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=southwest.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	s=southwest-airlines;
+	d=ifly.southwest.com;
+	h=domainkey-signature:from:date:subject:to:reply-to:mime-version:x-mailer:message-id:tenantheader:affinity:x-cust_messageid:x-cust_deliveryid:x-cust_instancename:messagemaxretry:messageretryperiod:messagewebvalidityduration:messagevalidityduration:x-cust_imsorgid:content-type:content-transfer-encoding;
+	bh=Rg/KeqwALVF9FOzfk2E5EOCdOwKL8gWxLzSyfAXfdDM=;
+	b=TZVNAuCyhCagb8NUUHs4gxsz4A9vmQNgXS/xnbQCJSvW8hHCMl/ijhurdueXWxei8GLHTxVWoxqhqoK4Hjpt/aNT0jGLeJZmyZ1ym533GWXwyD+YUT4mzdnFZIVXCg5xfOcqrPPmGgJ9/Kg9dBf1W1AqxFku7Sx3O41QmvNBS7TJzSox7IDbrjl6u5UYLvpyJao6SsdqxiiBD6P/+D/EQH6eIjOWPpjL9DdAeP4O6Q1WFCjt/hNpp6Rp9J05t99l8QBCBOybcia3elh470sPEtrworkRw/U5RLSjA2EQD/0F5IeMWkHqJ8cNW/fEtymIp+qOupxyJriLpK5rA5BYVQ==
+DomainKey-Signature: a=rsa-sha1; c=nofws; q=dns;
+	s=southwest-airlines;
+	d=ifly.southwest.com;
+	h=From:Date:Subject:To:Reply-To:MIME-Version:X-mailer:Message-ID:TenantHeader:Affinity:X-cust_MessageID:X-cust_DeliveryID:X-cust_InstanceName:MessageMaxRetry:MessageRetryPeriod:MessageWebValidityDuration:MessageValidityDuration:X-cust_IMSOrgID:Content-Type:Content-Transfer-Encoding;
+	b=PTlh7vrqVXqt0/izvqxfXtCWaPNrFL2uAVULmm6BEdyDIs37na5R6OZTk84P4VoUXmzq2w2LN5lsYxrXwMnUD1hgAAekqAhcwiDqg3MK9aNoOcGIO7WLcBVZCmGLNaet6sfMA4HkA4XgWuIhLJRbN9l1Ns1mSW8kM9yg+lH2ukAlkCYP6rnaoz89l5QcbrJSvE75kIIKZAzdTf/7n1BsxehuaOcZJDqlK4n5pvM+g6vHvTuBgXWIoV282PCxKGwXYIMYlrqJHo1vgEGiFGlOKqKG9mOsgKt6rdUryfE1CVeZjRJquTq0CzUJ1aJ+u3g9HdSBBcAUZMy0bKkGxd6E6Q==
+From: "Southwest Airlines" <southwestairlines@ifly.southwest.com>
+Date: Tue, 30 Jul 2019 20:46:30 -0700
+Subject: Bipinkumar's 08/30 Houston (Hobby), TX - HOU car reservation (1507055451COUNT)
+To: <bdbhakta1968@gmail.com>
+Reply-To: "Southwest Airlines" <no-reply@ifly.southwest.com>
+MIME-Version: 1.0
+X-mailer: nlserver, Build 6.7.0
+Message-ID: <NM623DBD6E00707C815southwe_rt_prod2@ifly.southwest.com>
+TenantHeader: 367011ca-3d26-4542-9bb9-ccb53ec4fc3b
+Affinity: email
+X-cust_MessageID: 601609952
+X-cust_DeliveryID: 117950485
+X-cust_InstanceName: southwe_rt_prod2
+MessageMaxRetry: 5
+MessageRetryPeriod: 3600
+MessageWebValidityDuration: 5184000
+MessageValidityDuration: 432000
+X-cust_IMSOrgID: 
+Content-Type: text/html;
+	charset="windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style=3D"opacity: 1; text-size-adjust: 100%; margin: 0px !important; =
+padding: 0px !important; width: 100% !important; height: 100% !important; b=
+ackground-color: rgb(255, 255, 255) !important;" xmlns=3D"https://www.w3.or=
+g/1999/xhtml">
+<head>
+  <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Type" =
+/>
+    <meta content=3D"IE=3Dedge" http-equiv=3D"X-UA-Compatible" />
+    <meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"vie=
+wport" />
+  <title>Southwest Airlines</title>
+  <!--[if gte mso 15]><style type=3D"text/css">* { mso-line-height-rule: ex=
+actly; } table { font-size: 1px; line-height: 0; mso-margin-top-alt: 1px; m=
+so-line-height-rule: exactly; }</style><![endif]-->
+  <!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![e=
+ndif]-->
+  <style type=3D"text/css">
+    
+    /* Resets */
+    p           {line-height: normal;}
+    table td       {border-collapse: collapse;}
+    #outlook a       {padding: 0;}
+    .ExternalClass     {width: 100%;}
+    .externalClass *   {line-height: 100%;}
+    .yshortcuts a     {border-bottom: none !important;}
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: normal !important;
+      line-height: inherit !important
+    }
+    
+    /* Media Queries */
+    @media screen and (max-width: 600px) {
+    /* Utility Classes */
+=2Efull       {width: 100% !important;}
+=2Ehide       {display: none !important;}
+=2Esides       {padding-left: 15px !important; padding-right: 15px !importa=
+nt;}
+=2Eauto-height   {height: auto !important;}
+
+=2Eimage-center img              {display: inline !important;}
+=2Etext-left, .text-left p           {text-align: left !important;}
+=2Etext-right, .text-right p           {text-align: right !important;}
+=2Eimage-center, .text-center, .text-center p  {text-align: center !importa=
+nt;}
+
+/* Grid */
+#main-container         {width: 100% !important;}
+#main-wrapper > tbody > tr > td {padding: 0 10px !important;}
+
+td        {height: auto !important;}
+th.split     {width: 100% !important; display: block !important;}
+img.mobile     {font-size: 12px; line-height: normal !important; width: 100=
+% !important; height: auto !important; max-height: inherit !important;}
+table.column   {width: 100% !important; height: auto !important;}
+
+/* Buttons */
+=2Ebtn-wrap > table,
+=2Ebtn-wrap-mobile > table  {width: 100% !important;}
+=2Ebtn-wrap-mobile       {line-height: normal !important; border-radius: 2p=
+x !important; -ms-border-radius: 2px !important; -webkit-border-radius: 2px=
+ !important;}
+
+=2Ebtn, .btn-mobile       {width: 100% !important; height:50px!important}
+=2Ebtn a, .btn-mobile a     {width: 100% !important; display: block;}
+=2Ebtn-mobile p         {font-size: 14px !important; font-weight: bold !imp=
+ortant; text-align: center !important; line-height: normal !important;}
+
+=2Ebtn-wrap-mobile.light-blue > table {border: 1px solid #304CB2;}
+=2Ebtn-wrap-mobile.dark-blue > table {border: 1px solid #111B40;}
+=2Ebtn-wrap-mobile.white > table {border: 1px solid #FFFFFF;}
+=2Ebtn-wrap-mobile.black > table {border: 1px solid #000001;}
+
+=2Eapp-badge {width: 110px !important;}
+
+/* Template */
+#top-nav th     {height: auto !important;}
+#top-nav .left td  {padding-bottom: 10px !important;}
+
+#travelSummary .row-3 .btn-wrap {padding-right: 0 !important}
+
+=2Epromo-boxes .left .promo {padding-bottom: 10px !important}
+=2Epromo-boxes .logo {padding-bottom: 15px !important;}
+
+=2Ebanner .image-center {padding-bottom: 0 !important;}
+
+#itinerary .SEG td {width: auto !important}
+
+#bot-nav > table   {width: 100% !important;}
+#bot-nav th     {padding: 10px 0 !important; border-bottom: 1px solid #CCCC=
+CC !important;}
+#bot-nav .label   {Margin: 0 0 5px 0 !important; font-size: 16px !important=
+;}
+#bot-nav .c2 img   {width: 24px !important;}
+#bot-nav .convert   {color: #616161 !important;}
+    /* Intro Module */
+=2Eintro .text-center {padding: 15px !important;}
+
+/* Purchase Module */
+#purchase .column.left {border-bottom: 10px solid #E6E8E9;}
+
+/* Car Banner */
+=2Ebanner.car .column.c1 .image-center {padding: 0 0 15px 0 !important;}
+=2Ebanner.car .column.c2 .text-center {padding-left: 15px !important;}
+=2Ebanner.car .column.c3 .image-center {padding: 15px 0 !important;}
+
+/* Itinerary Module */
+#itn .h1 {padding-right: 15px;}
+#itn .h2 p,
+#itn .h3 p {Margin-bottom: 3px !important}
+    }
+    
+  </style>
+  
+</head>
+
+
+<body style=3D"background-color: rgb(255, 255, 255); text-size-adjust: 100%=
+; margin: 0px !important; padding: 0px !important; height: 100% !important;=
+">
+
+
+<!-- Script Calls -->
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ <!-- =3D=3D=3D=3D=3D start: main wrapper =3D=3D=3D=3D=3D -->
+  <table id=3D"main-wrapper" width=3D"100%" role=3D"presentation" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"margin: 0; padding: 0; wid=
+th: 100% !important; height: 100% !important; line-height: 100% !important;=
+ background-color: #E6E8E9;">
+    <tbody>
+      <tr>
+        <td align=3D"center" valign=3D"top">
+          <table id=3D"main-container" width=3D"600" role=3D"presentation" =
+border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+            <tbody>
+              
+              <!-- =3D=3D=3D=3D=3D start: header region =3D=3D=3D=3D=3D -->
+              <tr>
+                <td id=3D"header" valign=3D"top" style=3D"padding: 10px 0 1=
+5px;">
+                  <table width=3D"100%" role=3D"presentation" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0">
+                    <tbody>
+                      
+                      <!-- start: preheader -->
+                      <tr>
+                        <td id=3D"preheader" valign=3D"top" style=3D"border=
+-bottom: 1px solid #CCCCCC;">
+                          <table align=3D"left" role=3D"presentation" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                            <tbody>
+                              
+                              <tr>
+                                <td valign=3D"top" style=3D"padding-bottom:=
+ 5px;">
+                                  <p style=3D"color: #636363; font-size: 10=
+px; font-family: Arial, Helvetica, sans-serif; text-align: left; Margin: 0;=
+">
+                                      
+                                      We've reserved your car with Alamo
+                                    
+                                  </p>
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <td valign=3D"top" style=3D"padding-bottom:=
+ 10px;">
+                                  <p style=3D"color: #646464; font-size: 10=
+px; font-family: Arial, Helvetica, sans-serif; text-align: left; Margin: 0;=
+">
+                                    <a _label=3D"Header_MobileSite" href=3D=
+"https://t.ifly.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c816&RSD=3D000=
+0&RMID=3DCARPURCHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6=
+d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd7=
+2a62039414e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;"=
+>                                      View our mobile site
+                                    </a> |
+                                    <a _label=3D"Header_ViewOnline" href=3D=
+"https://t.ifly.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c817&RSD=3D000=
+0&RMID=3DCARPURCHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6=
+d734330dac7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd7=
+2a62039414e9e5b1d728311c3&p1=3D%40FW2n4R2n0qDVnq3a5yaskmKe3thxAYwYnh7l2QwUZ=
+2o%3D" style=3D"color: #304CB2; text-decoration: none;">                   =
+                   View in browser
+                                    </a>
+                                  </p>
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <!-- end: preheader -->
+                      
+                      <!-- start: header -->
+
+<tr>
+  <td id=3D"top-nav" valign=3D"middle" style=3D"padding-top: 10px;">
+    <table width=3D"100%" role=3D"presentation" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">
+      <tbody>
+        <tr>
+          
+          <!-- start: left column (logo) -->
+          <th class=3D"split" height=3D"26" valign=3D"top" style=3D"padding=
+: 0; font-weight: normal;">
+            <table class=3D"column left" width=3D"100%" role=3D"presentatio=
+n" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+              <tbody>
+                
+                <tr>
+                    <td valign=3D"top">
+                      <a _label=3D"Header_Logo" href=3D"https://t.ifly.sout=
+hwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c819&RSD=3D0000&RMID=3DCARPURCHASE=
+&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f=
+9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d728=
+311c3" style=3D"color: #304CB2; text-decoration: underline;"><img src=3D"ht=
+tp://res.ifly.southwest.com/res/southwe_rt_prod2/logo-southwest.png" alt=3D=
+"Southwest Airlines" title=3D"Southwest Airlines" width=3D"170" align=3D"le=
+ft" border=3D"0" style=3D"display: block; color: #304CB2; font-size: 16px; =
+font-weight: bold; font-family: Arial, Helvetica, sans-serif;"/>
+                      </a>
+                    </td>
+                  </tr>
+
+                                                    
+              </tbody>
+            </table>
+          </th>
+          <!-- end: left column (logo) -->
+          
+          <!-- start: right column (nav) -->
+          <th class=3D"split" height=3D"26" valign=3D"middle" style=3D"padd=
+ing: 0; font-weight: normal;">
+            <table class=3D"column right" width=3D"100%" role=3D"presentati=
+on" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+              <tbody>
+                <tr>
+                  <td class=3D"text-left" valign=3D"top">
+                    <p style=3D"color: #646464; font-size: 14px; font-famil=
+y: Arial, Helvetica, sans-serif; text-align: right; Margin: 0;">
+                      <a _label=3D"Header_ManageFlight" href=3D"https://t.i=
+fly.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c81a&RSD=3D0000&RMID=3DCAR=
+PURCHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac76=
+53563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9=
+e5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;"><strong>Man=
+age Flight</strong>
+                      </a> |
+                      <a _label=3D"Header_FlightStatus" href=3D"https://t.i=
+fly.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c81b&RSD=3D0000&RMID=3DCAR=
+PURCHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac76=
+53563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9=
+e5b1d728311c3&p1=3D&p2=3D&p3=3D" style=3D"color: #304CB2; text-decoration: =
+none;"><strong>Flight Status</strong>
+                      </a> |
+                      <a _label=3D"Header_MyAccount" href=3D"https://t.ifly=
+.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c81c&RSD=3D0000&RMID=3DCARPUR=
+CHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac76535=
+63c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b=
+1d728311c3" style=3D"color: #304CB2; text-decoration: none;"><strong>My&nbs=
+p;Account</strong>
+                      </a>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </th>
+          <!-- end: right column (nav) -->
+          
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
+<!-- end: header -->  
+                      
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- =3D=3D=3D=3D=3D end: header region =3D=3D=3D=3D=3D -->
+              
+              <!-- =3D=3D=3D=3D=3D start: body region =3D=3D=3D=3D=3D -->
+              <tr>
+                <td id=3D"main-body" class=3D"wrap" valign=3D"top">
+                  <table width=3D"100%" role=3D"presentation" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0">
+                    <tbody>
+                      
+                      <!-- start: intro -->
+                      <tr>
+                        <td class=3D"module" valign=3D"top">
+                          
+                            <table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" class=3D"intro" width=3D"100%">
+                              <tbody>
+                                <tr>
+                                  <td class=3D"container" style=3D"padding-=
+bottom: 10px;" valign=3D"top">
+                                    <table border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" class=3D"background" style=3D"background-color: #304CB2;" =
+width=3D"100%">
+                                      <tbody>
+                                        <tr>
+                                          
+                                          <th class=3D"split" style=3D"padd=
+ing: 0;" valign=3D"top">
+                                            <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"column left" width=3D"125">
+                                              <tbody>
+                                                <tr>
+                                                  <td class=3D"image-center=
+" style=3D"padding: 15px;" valign=3D"middle">
+                                                    <img alt=3D"" border=3D=
+"0" src=3D"http://res.ifly.southwest.com/res/southwe_rt_prod2/ico-car_blue.=
+png" style=3D"display: block;" width=3D"95" />
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </th>
+                                          
+                                          <th class=3D"split" style=3D"padd=
+ing: 0; font-weight: normal;" valign=3D"top">
+                                            <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" class=3D"column right" width=3D"475">
+                                              <tbody>
+                                                <tr>
+                                                  <td class=3D"sides" style=
+=3D"padding: 15px 15px 15px 0;" valign=3D"middle">
+                                                    <p style=3D"color: #FFF=
+FFF; font-size: 20px; font-weight: bold; font-family: Arial, Helvetica, san=
+s-serif; text-align: left; Margin: 0 0 10px 0;">
+                                                      Ready. Set. Go!
+                                                    </p>
+                                                    <p style=3D"color: #FFF=
+FFF; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text-align=
+: left; Margin: 0;">
+                                                      Thanks for letting us=
+ help you reserve a car with Alamo. Your rate is an estimate; refer to Alam=
+o's terms and conditions below, or contact Alamo directly for additional in=
+formation regarding payment, pickup, and drop off.
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </th>
+                                        
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          
+                        </td>
+                      </tr>
+                      <!-- end: intro -->
+                      
+                      <!-- start: travel summary -->
+                      <tr>
+                        <td class=3D"module" valign=3D"top">
+                          
+                            
+                           
+
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" id=3D"travelSummary" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td class=3D"container" style=3D"padding-bo=
+ttom: 10px;" valign=3D"top">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"background" style=3D"background-color: #FFFFFF;" wi=
+dth=3D"100%">
+                                    <tbody>
+                                      <tr>
+                                        <td style=3D"padding: 0 15px;" vali=
+gn=3D"top">
+                                          <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                              
+                                              <tr>
+                                                <td class=3D"row-1" style=
+=3D"padding: 15px 0; border-bottom: 1px solid #CCCCCC;" valign=3D"top">
+                                                  <table align=3D"left" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+                                                    <tbody>
+                                                      
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g-bottom: 10px;" valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 14px; font-weight: bold; font-family: Arial, Helvetic=
+a, sans-serif; text-align: left; Margin: 0;">
+                                                            <a style=3D"col=
+or: #646464; text-decoration: none;">
+                                                              August 30
+                                                              
+                                                               - September =
+2 
+                                                               
+                                                            </a>
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      
+                                                      
+                                                        <tr>
+                                                          <td style=3D"padd=
+ing-bottom: 10px;" valign=3D"top">
+                                                            <img alt=3D"Ala=
+mo" border=3D"0" src=3D"https://www.southwest.com/assets/images/car/email_a=
+lamo_logo.png" style=3D"display: block; color: #FFF200; font-size: 18px; fo=
+nt-weight: bold; font-family: Arial, Helvetica, sans-serif;" width=3D"149" =
+/>
+                                                          </td>
+                                                        </tr>
+                                                      
+                                                      
+                                                      <tr>
+                                                        <td valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0;">
+                                                            Houston (Hobby)=
+, TX - HOU
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td class=3D"row-2" style=
+=3D"padding-top: 15px;">
+                                                  <table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g-bottom: 15px;" valign=3D"top">
+                                                          <table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                            <tbody>
+                                                              <tr>
+                                                                <td style=
+=3D"padding-right: 10px;" valign=3D"bottom">
+                                                                  <p style=
+=3D"color: #111B40; font-size: 16px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: left; Margin: 0;">
+                                                                    Confirm=
+ation # <span style=3D"color: #008522; font-size: 20px;"><strong>1507055451=
+COUNT</strong></span>
+                                                                  </p>
+                                                                  
+                                                                </td>
+                                                                <td valign=
+=3D"bottom">
+                                                                  <p style=
+=3D"color: #646464; font-size: 14px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: right; Margin: 0;">
+                                                                    Confirm=
+ation date: <a style=3D"color: #646464; text-decoration: none;">
+                                                                    07/30/2=
+019</a>
+                                                                  </p>
+                                                                </td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <!-- end: travel summary -->
+                      
+                      <!-- start: itinerary -->
+                      <tr>
+                        <td class=3D"module" valign=3D"top">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" id=3D"itn" width=3D"100%">
+                            <tbody>
+                              
+                              <tr>
+                                <td class=3D"container" style=3D"padding-bo=
+ttom: 10px;" valign=3D"top">
+                                  <p style=3D"color: #111B40; font-size: 24=
+px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-alig=
+n: left; Margin: 0;">
+                                    Your itinerary
+                                  </p>
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <td class=3D"container" style=3D"padding-bo=
+ttom: 10px;" valign=3D"top">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"background" style=3D"background-color: #FFFFFF;" wi=
+dth=3D"100%">
+                                    <tbody>
+                                      
+                                      <tr>
+                                        <td class=3D"head" valign=3D"top">
+                                          <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"background-color: #111B3F;" width=3D"100%=
+">
+                                            <tbody>
+                                              <tr>
+                                                
+                                                <th class=3D"split" style=
+=3D"padding: 0; font-weight: normal;" valign=3D"middle">
+                                                  <table align=3D"left" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"column left" width=
+=3D"285">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g: 5px 0 5px 15px;" valign=3D"middle">
+                                                          <p style=3D"color=
+: #FFFFFF; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0;">
+                                                            <strong>DRIVER =
+NAME</strong> Bipinkumar Bhakta
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </th>
+                                                
+                                                
+                                                   <th class=3D"split" styl=
+e=3D"padding: 0; font-weight: normal;" valign=3D"middle">
+                                                    <table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" class=3D"column right" width=3D"285">
+                                                      <tbody>
+                                                        <tr>
+                                                          <td class=3D"text=
+-left" style=3D"padding: 5px 15px 5px 0;" valign=3D"middle">
+                                                            <p style=3D"col=
+or: #FFFFFF; font-size: 14px; font-family: Arial, Helvetica, sans-serif; te=
+xt-align: right; Margin: 0;">
+                                                              <strong>RAPID=
+ REWARDS #</strong> 64404373
+                                                            </p>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </th>
+                                                                           =
+                     
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                              
+                                      <tr>
+                                        <td style=3D"padding: 15px;" valign=
+=3D"top">
+                                          <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" width=3D"100%">
+                                            <tbody>
+                                              
+                                              <tr>
+                                                <td style=3D"padding-bottom=
+: 15px;" valign=3D"top">
+                                                  <table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                    <tbody>
+                                                      <tr>
+                                                        
+                                                        <th class=3D"split"=
+ style=3D"padding: 0 15px 0 0; font-weight: normal;" valign=3D"top">
+                                                          <table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" class=3D"column left" width=3D"270">
+                                                            <tbody>
+                                                              <tr>
+                                                                <td valign=
+=3D"top">
+                                                                  <p style=
+=3D"color: #646464; font-size: 14px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: left; Margin: 0 0 10px 0;">
+                                                                    PICK-UP
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #304CB2; font-size: 14px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: left; Margin: 0 0 10px 0;">
+                                                                    <strong=
+><span style=3D"font-size: 18px;">August 30, 2019 10:00</span></strong>PM
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #304CB2; font-size: 14px; font-weight: bold; font-family: Arial,=
+ Helvetica, sans-serif; text-align: left; Margin: 0 0 3px 0;">
+                                                                    LOCATIO=
+N
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #646464; font-size: 14px; font-weight: bold; font-family: Arial,=
+ Helvetica, sans-serif; text-align: left; Margin: 0;">
+                                                                    Houston=
+ (Hobby), TX - HOU
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #646464; font-size: 14px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: left; Margin: 0;">
+                                                                    Rental =
+Counter is located outside of the Airport Terminal. Shuttle is provided.
+                                                                  </p>
+                                                                </td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </th>
+                                                        
+                                                        <th class=3D"split"=
+ style=3D"padding: 0; font-weight: normal;" valign=3D"top">
+                                                          <table border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" class=3D"column right" width=3D"285"=
+>
+                                                            <tbody>
+                                                              <tr>
+                                                                <td valign=
+=3D"top">
+                                                                  <p style=
+=3D"color: #646464; font-size: 14px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: left; Margin: 0 0 10px 0;">
+                                                                    RETURN
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #304CB2; font-size: 14px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: left; Margin: 0 0 10px 0;">
+                                                                    <strong=
+><span style=3D"font-size: 18px;">September 02, 2019 11:00</span></strong>A=
+M
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #304CB2; font-size: 14px; font-weight: bold; font-family: Arial,=
+ Helvetica, sans-serif; text-align: left; Margin: 0 0 3px 0;">
+                                                                    LOCATIO=
+N
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #646464; font-size: 14px; font-weight: bold; font-family: Arial,=
+ Helvetica, sans-serif; text-align: left; Margin: 0;">
+                                                                    Houston=
+ (Hobby), TX - HOU
+                                                                  </p>
+                                                                  <p style=
+=3D"color: #646464; font-size: 14px; font-family: Arial, Helvetica, sans-se=
+rif; text-align: left; Margin: 0;">
+                                                                    Rental =
+Counter is located outside of the Airport Terminal. Shuttle is provided.
+                                                                  </p>
+                                                                </td>
+                                                              </tr>
+                                                            </tbody>
+                                                          </table>
+                                                        </th>
+                                                      
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                            
+                                              <tr>
+                                                <td style=3D"padding-top: 1=
+5px;" valign=3D"top">
+                                                  <p style=3D"color: #64646=
+4; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text-align: =
+left; Margin: 0 0 10px 0;">
+                                                    <strong>VEHICLE DESCRIP=
+TION</strong> Full-size  - FORD FUSION OR SIMILAR
+                                                  </p>
+                                                  
+                                                    <p style=3D"color: #646=
+464; font-size: 14px; font-family: Arial, Helvetica, sans-serif; text-align=
+: left; Margin: 0;">
+                                                      <strong>DETAILS</stro=
+ng> The minimum rental age is 25 years old on most rentals. All drivers mus=
+t have a major credit card and valid driver's license in the driver's name.=
+ Remember to show your Rapid Rewards card at checkout.
+                                                    </p>
+                                                  
+                                                  
+                                                </td>
+                                              </tr>
+                                                
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <!-- end: itinerary -->
+                      
+                      <!-- start: purchase summary -->
+                      <tr>
+                        <td class=3D"module" valign=3D"top">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" id=3D"purchase" width=3D"100%">
+                            <tbody>
+                              
+                              <tr>
+                                <td class=3D"container" style=3D"padding-bo=
+ttom: 10px;" valign=3D"top">
+                                  <p style=3D"color: #111B40; font-size: 24=
+px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-alig=
+n: left; Margin: 0;">
+                                    Cost estimate
+                                  </p>
+                                </td>
+                              </tr>
+                              
+                              <tr>
+                                <td class=3D"container" style=3D"padding-bo=
+ttom: 10px;" valign=3D"top">
+                                  <table border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"background" style=3D"background-color: #FFFFFF;" wi=
+dth=3D"100%">
+                                    <tbody>
+                                      
+                                      <tr>
+                                        <td class=3D"head" valign=3D"top">
+                                          <table border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"background-color: #111B3F;" width=3D"100%=
+">
+                                            <tbody>
+                                              <tr>
+                                                <td style=3D"padding: 5px 1=
+5px;" valign=3D"middle">
+                                                  <p style=3D"color: #FFFFF=
+F; font-size: 14px; font-weight: bold; font-family: Arial, Helvetica, sans-=
+serif; text-align: left; Margin: 0;">
+                                                    Total cost
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                      
+                                      <tr>
+                                        <td style=3D"padding: 15px;" valign=
+=3D"top">
+                                          <table align=3D"left" border=3D"0=
+" cellpadidng=3D"0" cellspacing=3D"0" class=3D"full" width=3D"285">
+                                            <tbody>
+                                              
+                                              <tr>
+                                                <td style=3D"padding-bottom=
+: 5px;" valign=3D"top">
+                                                  <p style=3D"color: #111B4=
+0; font-size: 14px; font-weight: bold; font-family: Arial, Helvetica, sans-=
+serif; text-align: left; Margin: 0;">
+                                                    CAR - <span style=3D"co=
+lor: #008522;">1507055451COUNT</span>
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td style=3D"padding-bottom=
+: 5px; border-bottom: 1px solid  #111B40;" vlaign=3D"top">
+                                                  <table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                    <tbody>
+                                                      
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g-right: 10px;" valign=3D"top" width=3D"186">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0 0 3px 0;">
+                                                            Base rate
+                                                          </p>
+                                                        </td>
+                                                        <td style=3D"paddin=
+g-right: 5px;" valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0 0 3px 0;">$</p>
+                                                        </td>
+                                                        <td valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: right; Margin: 0 0 3px 0;">
+                                                            47.76
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g-right: 10px;" valign=3D"top" width=3D"186">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0 0 3px 0;">
+                                                            Mileage
+                                                          </p>
+                                                        </td>
+                                                        <td style=3D"paddin=
+g-right: 5px;" valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0 0 3px 0;">
+                                                            
+                                                          </p>
+                                                        </td>
+                                                        <td valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: right; Margin: 0 0 3px 0;">
+                                                            
+                                                              Unlimited 
+                                                            
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                              
+                                                      
+                                                        <tr>
+                                                          <td style=3D"padd=
+ing-right: 10px;" valign=3D"top" width=3D"186">
+                                                            <p style=3D"col=
+or: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; te=
+xt-align: left; Margin: 0 0 3px 0;">
+                                                              Drop charge
+                                                            </p>
+                                                          </td>
+                                                          <td style=3D"padd=
+ing-right: 5px;" valign=3D"top">
+                                                            <p style=3D"col=
+or: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; te=
+xt-align: left; Margin: 0 0 3px 0;">
+                                                              $
+                                                            </p>
+                                                          </td>
+                                                          <td valign=3D"top=
+">
+                                                            <p style=3D"col=
+or: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; te=
+xt-align: right; Margin: 0 0 3px 0;">
+                                                              
+                                                                0.00
+                                                              
+                                                            </p>
+                                                          </td>
+                                                        </tr>
+                                                      
+                                                      
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g-right: 10px;" valign=3D"top" width=3D"186">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0 0 3px 0;">
+                                                            Taxes/Fees
+                                                          </p>
+                                                        </td>
+                                                        <td style=3D"paddin=
+g-right: 5px;" valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0 0 3px 0;">$</p>
+                                                        </td>
+                                                        <td valign=3D"top">
+                                                          <p style=3D"color=
+: #646464; font-size: 12px; font-family: Arial, Helvetica, sans-serif; text=
+-align: right; Margin: 0 0 3px 0;">
+                                                            21.27
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              
+                                              <tr>
+                                                <td style=3D"padding-top: 5=
+px;" vlaign=3D"top">
+                                                  <table border=3D"0" cellp=
+adding=3D"0" cellspacing=3D"0" width=3D"100%">
+                                                    <tbody>
+                                                      
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g-right: 10px;" valign=3D"top" width=3D"186">
+                                                          <p style=3D"color=
+: #111B40; font-size: 12px; font-weight: bold; font-family: Arial, Helvetic=
+a, sans-serif; text-align: left; Margin: 0 0 3px 0;">
+                                                            Car total due a=
+t pickup
+                                                          </p>
+                                                          <p style=3D"color=
+: #646464; font-size: 10px; font-family: Arial, Helvetica, sans-serif; text=
+-align: left; Margin: 0 0 10px 0;">
+                                                            (Excludes car r=
+ental extras)
+                                                          </p>
+                                                        </td>
+                                                        <td style=3D"paddin=
+g-right: 5px;" valign=3D"top">
+                                                          <p style=3D"color=
+: #111B40; font-size: 12px; font-weight: bold; font-family: Arial, Helvetic=
+a, sans-serif; text-align: left; Margin: 0 0 10px 0;">$</p>
+                                                        </td>
+                                                        <td valign=3D"top">
+                                                          <p style=3D"color=
+: #111B40; font-size: 12px; font-weight: bold; font-family: Arial, Helvetic=
+a, sans-serif; text-align: right; Margin: 0 0 10px 0;">
+                                                            69.03
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      
+                                                      <tr>
+                                                        <td style=3D"paddin=
+g-right: 10px;" valign=3D"top" width=3D"186">
+                                                          <p style=3D"color=
+: #111B40; font-size: 12px; font-weight: bold; font-family: Arial, Helvetic=
+a, sans-serif; text-align: left; Margin: 0;">
+                                                            Car total due n=
+ow
+                                                          </p>
+                                                        </td>
+                                                        <td style=3D"paddin=
+g-right: 5px;" valign=3D"top">
+                                                          <p style=3D"color=
+: #111B40; font-size: 12px; font-weight: bold; font-family: Arial, Helvetic=
+a, sans-serif; text-align: left; Margin: 0;">$</p>
+                                                        </td>
+                                                        <td valign=3D"top">
+                                                          <p style=3D"color=
+: #111B40; font-size: 12px; font-weight: bold; font-family: Arial, Helvetic=
+a, sans-serif; text-align: right; Margin: 0;">
+                                                            0.00
+                                                          </p>
+                                                        </td>
+                                                      </tr>
+                                                      
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                              
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                        
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <!-- end: purchase summary -->
+                      
+                      
+                        <!-- start: promotional content -->
+                        
+
+<tr>
+  <td valign=3D"top" class=3D"module">
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"bann=
+er hotel" width=3D"100%">
+    <tbody>
+      <tr>
+        <td class=3D"container" style=3D"padding-bottom: 10px;" valign=3D"t=
+op">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+background" style=3D"background-color: #9ADAFE;" width=3D"100%">
+            <tbody>
+              <tr>
+                <th class=3D"split" style=3D"padding: 0" valign=3D"middle">
+                  <table align=3D"center" border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" class=3D"column left">
+                    <tbody>
+                      <tr>
+                        <td class=3D"image-center" style=3D"padding: 15px;"=
+ valign=3D"middle"><img alt=3D"" border=3D"0" src=3D"http://res.ifly.southw=
+est.com/res/southwe_rt_prod2/ico-hotel.png" style=3D"display: block;" width=
+=3D"52" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </th>
+                <th class=3D"split" style=3D"padding: 0;" valign=3D"middle"=
+>
+                  <table align=3D"right" border=3D"0" cellpadding=3D"0" cel=
+lspacing=3D"0" class=3D"column right">
+                    <tbody>
+                      <tr>
+                        <td class=3D"text-center" style=3D"padding: 15px;" =
+valign=3D"top">
+                          <p style=3D"color: #304CB2; font-size: 18px; font=
+-weight: bold; font-family: Arial, Helvetica, sans-serif; text-align: left;=
+ Margin: 0 0 10px 0;">Earn up to 10,000 Rapid Rewards&reg; points per night
+                          </p>
+                          <p style=3D"color: #304CB2; font-size: 14px; font=
+-family: Arial, Helvetica, sans-serif; text-align: left; Margin: 0;">
+                           Choose a hotel at your destination.
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class=3D"btn-wrap-mobile light-blue" style=3D"p=
+adding: 0 15px 15px 15px;" valign=3D"top">
+                          <table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"100%">
+                            <tbody>
+                              <tr>
+                                <td class=3D"btn-mobile" valign=3D"middle">
+                                  <p style=3D"color: #304CB2; font-size: 14=
+px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-alig=
+n: right; Margin: 0;"><a _label=3D"Banner_Hotel" href=3D"https://t.ifly.sou=
+thwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c81d&RSD=3D0000&RMID=3DCARPURCHAS=
+E&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5=
+f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d72=
+8311c3&p1=3D&p2=3D&p3=3D" style=3D"color: #304CB2; text-decoration: none;">=
+Search hotel<span class=3D"hide"> ></span> </a>
+                                  </p>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+   </table>
+  </td>
+</tr> 
+                        <!-- end: promotional content -->
+                      
+                      
+                      
+                        <!-- start: terms -->
+                        <tr>
+                          <td class=3D"module" valign=3D"top">
+                            <p style=3D"color: #646464; font-size: 10px; fo=
+nt-family: Arial, Helvetica, sans-serif; text-align: left; Margin: 0 0 10px=
+ 0;">
+                              <strong>Vendor terms and conditions:</strong>=
+ ALLOWED - RETURN TO SPECIFIED LOCATION ONLY A MINIMUM OF 2 DAYS WILL BE CH=
+ARGED KIOSK SERVICE AVAILABLE
+                            </p>
+                          </td>
+                        </tr>
+                        <!-- end: terms -->
+                      
+                      
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- =3D=3D=3D=3D=3D end: body region =3D=3D=3D=3D=3D -->
+              
+              <!-- =3D=3D=3D=3D=3D start: footer region =3D=3D=3D=3D=3D -->
+              <tr>
+                <td id=3D"footer" class=3D"wrap" valign=3D"top" style=3D"pa=
+dding-bottom: 15px;">
+                  <table width=3D"100%" role=3D"presentation" border=3D"0" =
+cellpadding=3D"0" cellspacing=3D"0">
+                    <tbody>
+                      
+                      <!-- start: bottom navigation -->
+                      <tr>
+  <td id=3D"bot-nav" valign=3D"top" style=3D"padding-bottom: 15px;">
+    <table align=3D"left" role=3D"presentation" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">
+      <tbody>
+        <tr>
+          
+          <th class=3D"split" valign=3D"top" style=3D"padding: 0; font-weig=
+ht: normal;">
+            <table class=3D"column c1" role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0">
+              <tbody>
+                <tr>
+                  <td valign=3D"top" style=3D"padding-right: 15px;">
+                    <p class=3D"label" style=3D"color: #646464; font-size: =
+14px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-al=
+ign: left; Margin: 0 0 8px 0;">
+                      Need help=3F
+                    </p>
+                    <p style=3D"color: #646464; font-size: 14px; font-weigh=
+t: bold; font-family: Arial, Helvetica, sans-serif; text-align: left; Margi=
+n: 0 0 5px 0;">
+                      <a _label=3D"Footer_ContactUs" href=3D"https://t.ifly=
+.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c81e&RSD=3D0000&RMID=3DCARPUR=
+CHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac76535=
+63c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b=
+1d728311c3" style=3D"color: #304CB2; text-decoration: none;">              =
+          Contact us
+                      </a>
+                    </p>
+                    <p style=3D"color: #646464; font-size: 12px; font-famil=
+y: Arial, Helvetica, sans-serif; text-align: left; Margin: 0;">
+                      <a _label=3D"Footer_CustomerService" href=3D"https://=
+t.ifly.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c81f&RSD=3D0000&RMID=3D=
+CARPURCHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330da=
+c7653563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a6203941=
+4e9e5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;">        =
+                Customer service
+                      </a> |
+                      <a _label=3D"Footer_FAQ" href=3D"https://t.ifly.south=
+west.com/r/=3Fid=3Dh23dbd6e0,707c815,707c820&RSD=3D0000&RMID=3DCARPURCHASE&=
+SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9=
+f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d7283=
+11c3" style=3D"color: #304CB2; text-decoration: none;">                    =
+    FAQs
+                      </a>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </th>
+          
+          <th class=3D"split" valign=3D"top" style=3D"padding: 0; font-weig=
+ht: normal;">
+            <table class=3D"column c2" role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0">
+              <tbody>
+                <tr>
+                  <td valign=3D"top" style=3D"padding-right: 15px;">
+                    <p class=3D"label" style=3D"color: #646464; font-size: =
+14px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; text-al=
+ign: left; Margin: 0 0 5px 0;">
+                      Connect with us
+                    </p>
+                    <p style=3D"color: #646464; font-size: 12px; font-famil=
+y: Arial, Helvetica, sans-serif; text-align: left; Margin: 0 0 3px 0;">
+                      <a _label=3D"Footer_Twitter" href=3D"https://t.ifly.s=
+outhwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c821&RSD=3D0000&RMID=3DCARPURCH=
+ASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac7653563=
+c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d=
+728311c3" style=3D"color: #304CB2; text-decoration: none;"><img src=3D"http=
+://res.ifly.southwest.com/res/southwe_rt_prod2/ico-twitter.png" alt=3D"Twit=
+ter" width=3D"17" border=3D"0" style=3D"display: inline;">
+                      </a>&nbsp;
+                      <a _label=3D"Footer_Facebook" href=3D"https://t.ifly.=
+southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c822&RSD=3D0000&RMID=3DCARPURC=
+HASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac765356=
+3c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1=
+d728311c3" style=3D"color: #304CB2; text-decoration: none;"><img src=3D"htt=
+p://res.ifly.southwest.com/res/southwe_rt_prod2/ico-facebook.png" alt=3D"Fa=
+cebook" width=3D"17" border=3D"0" style=3D"display: inline;">
+                      </a>&nbsp;
+                      <a _label=3D"Footer_Instagram" href=3D"https://t.ifly=
+.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c823&RSD=3D0000&RMID=3DCARPUR=
+CHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac76535=
+63c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b=
+1d728311c3" style=3D"color: #304CB2; text-decoration: none;"><img src=3D"ht=
+tp://res.ifly.southwest.com/res/southwe_rt_prod2/ico-instagram.png" alt=3D"=
+Instagram" width=3D"17" border=3D"0" style=3D"display: inline;">
+                      </a>&nbsp;
+                      <a _label=3D"Footer_YouTube" href=3D"https://t.ifly.s=
+outhwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c824&RSD=3D0000&RMID=3DCARPURCH=
+ASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac7653563=
+c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d=
+728311c3" style=3D"color: #304CB2; text-decoration: none;"><img src=3D"http=
+://res.ifly.southwest.com/res/southwe_rt_prod2/ico-youtube.png" alt=3D"YouT=
+ube" width=3D"17" border=3D"0" style=3D"display: inline;">
+                      </a>&nbsp;
+                      <a _label=3D"Footer_SWCommunity" href=3D"https://t.if=
+ly.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c825&RSD=3D0000&RMID=3DCARP=
+URCHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac765=
+3563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e=
+5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;"><img src=3D"=
+http://res.ifly.southwest.com/res/southwe_rt_prod2/ico-community.png" alt=
+=3D"Southwest Community" width=3D"17" border=3D"0" style=3D"display: inline=
+;">
+                      </a>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </th>
+          
+          <th class=3D"split" valign=3D"top" style=3D"padding: 0; font-weig=
+ht: normal;">
+            <table class=3D"column c3" role=3D"presentation" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0">
+              <tbody>
+                <tr>
+                  <td valign=3D"top" style=3D"padding-right: 15px;">
+                    <p class=3D"label convert" style=3D"color: #E6E8E9; fon=
+t-size: 8px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; =
+text-align: left; Margin: 0 0 5px 0;">
+                      Mobile app
+                    </p>
+                    <p class=3D"hide" style=3D"color: #646464; font-size: 1=
+4px; font-family: Arial, Helvetica, sans-serif; text-align: center; Margin:=
+ 0 0 5px 0;">
+                      <a _label=3D"Footer_App" href=3D"https://t.ifly.south=
+west.com/r/=3Fid=3Dh23dbd6e0,707c815,707c844&RSD=3D0000&RMID=3DCARPURCHASE&=
+SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9=
+f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d7283=
+11c3" style=3D"color: #304CB2; text-decoration: none;"><img src=3D"http://r=
+es.ifly.southwest.com/res/southwe_rt_prod2/ico-app.png" alt=3D"Download our=
+ app" width=3D"14" border=3D"0" style=3D"display: inline;"/>
+                      </a>
+                    </p>
+                    <p style=3D"color: #646464; font-size: 12px; font-famil=
+y: Arial, Helvetica, sans-serif; text-align: left; Margin: 0;">
+                      <a _label=3D"Footer_App" href=3D"https://t.ifly.south=
+west.com/r/=3Fid=3Dh23dbd6e0,707c815,707c845&RSD=3D0000&RMID=3DCARPURCHASE&=
+SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac7653563c5f9=
+f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1d7283=
+11c3" style=3D"color: #304CB2; text-decoration: none;">                    =
+    Get the mobile app
+                      </a>
+                    </p>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </th>
+          
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr> 
+                      <!-- end: bottom navigation -->
+                      
+                      <!-- start: legal -->
+                      <tr>
+  <td id=3D"legal" valign=3D"top" style=3D"padding-bottom: 15px;">
+    <table width=3D"100%" role=3D"presentation" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0">
+      <tbody>
+        <tr>
+          <td valign=3D"top">
+            <p style=3D"color: #646464; font-size: 10px; font-family: Arial=
+, helvetica, sans-serif; text-align: left; margin: 0 0 10px 0;">
+              This is a post-only mailing from Southwest Airlines&reg;. Ple=
+ase do not attempt to respond to this message. Your privacy is important to=
+ us. Please read our <a _label=3D"Footer_PrivacyPolicy" href=3D"https://t.i=
+fly.southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c846&RSD=3D0000&RMID=3DCAR=
+PURCHASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac76=
+53563c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9=
+e5b1d728311c3" style=3D"color: #304CB2; text-decoration: none;">privacy pol=
+icy</a>.
+            </p>
+            <p style=3D"color: #646464; font-size: 10px; font-family: Arial=
+, helvetica, sans-serif; text-align: left; margin: 0 0 10px 0;">
+              See <a _label=3D"Footer_NoticeIncorp" href=3D"https://t.ifly.=
+southwest.com/r/=3Fid=3Dh23dbd6e0,707c815,707c847&RSD=3D0000&RMID=3DCARPURC=
+HASE&SRC=3DMAILTXNCONF000CAR18XXXX&RRID=3Da4d68d26b9d52eae6d734330dac765356=
+3c5f9f1c2fa70c3a8920abb45130854&RR_NUMBER=3D80fbe284d30cfd72a62039414e9e5b1=
+d728311c3" style=3D"color: #304CB2; text-decoration: none;">Southwest Airli=
+nes Co. Notice of Incorporation</a>
+            </p>
+            <p style=3D"color: #646464; font-size: 10px; font-family: Arial=
+, helvetica, sans-serif; text-align: left; margin: 0 0 10px 0;">
+              Cualquier informaci&oacute;n publicitaria, promocional o de m=
+ercadotecnia contenida en este correo electr&oacute;nico s&oacute;lo ser&aa=
+cute; efectiva y &uacute;nicamente ser&aacute; aplicable en los Estados Uni=
+dos de Am&eacute;rica.
+            </p>
+            <p style=3D"color: #646464; font-size: 10px; font-family: Arial=
+, helvetica, sans-serif; text-align: left; margin: 0 0 10px 0;">
+              <a style=3D"color: #646464; text-decoration: none;">
+                Southwest Airlines
+                <br />
+                2702 Love Field Drive
+                <br />
+                Dallas, TX 75235
+              </a>
+              <br />
+              <a href=3D"tel:18004359792" style=3D"color: #646464; text-dec=
+oration: none;">1-800-I-FLY-SWA (1-800-435-9792)</a>
+            </p>
+            <p style=3D"color: #646464; font-size: 10px; font-family: Arial=
+, Hevletica, sans-serif; text-align: left; Margin: 0;">
+              <span aria-hidden=3D"true">&copy;</span> Copyright 2019 South=
+west Airlines Co. All Rights Reserved.
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr> 
+                      <!-- end: legal -->
+                      
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- =3D=3D=3D=3D=3D end: footer region =3D=3D=3D=3D=3D -->
+              
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- =3D=3D=3D=3D=3D end: main wrapper =3D=3D=3D=3D=3D -->
+
+<img height=3D'0' width=3D'0' alt=3D'' src=3D'https://t.ifly.southwest.com/=
+r/=3Fid=3Dh23dbd6e0,707c815,1'/></body>
+</html>
+
